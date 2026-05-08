@@ -1,0 +1,1354 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>LADENG DERPENG Lorie — Styliste Modéliste</title>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Bebas+Neue&family=DM+Sans:wght@300;400;500&family=Playfair+Display:ital,wght@0,700;1,400;1,700&family=Great+Vibes&family=Cinzel+Decorative:wght@400;700;900&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+
+    :root {
+      --terracotta: #C4622D;
+      --gold: #D4A853;
+      --warm-cream: #F5EDD8;
+      --deep-earth: #2C1810;
+      --sienna: #8B3E1F;
+      --sand: #E8D5B0;
+      --wax-blue: #1E3A5F;
+      --wax-green: #2D5A3D;
+      --off-white: #FAF6EF;
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: 'DM Sans', sans-serif;
+      background-color: var(--off-white);
+      color: var(--deep-earth);
+      overflow-x: hidden;
+    }
+
+    /* ── NAV ── */
+    nav {
+      position: fixed;
+      top: 0; left: 0; right: 0;
+      z-index: 100;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 1.4rem 3rem;
+      background: rgba(250, 246, 239, 0.92);
+      backdrop-filter: blur(10px);
+      border-bottom: 1px solid rgba(196, 98, 45, 0.15);
+    }
+
+    .nav-logo {
+      display: flex;
+      align-items: center;
+      gap: 0.8rem;
+      text-decoration: none;
+    }
+
+    .nav-logo-img {
+      width: 42px;
+      height: 42px;
+      border-radius: 50%;
+      border: 2px solid var(--terracotta);
+      object-fit: cover;
+      overflow: hidden;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: linear-gradient(135deg, var(--terracotta), var(--gold));
+      flex-shrink: 0;
+      cursor: pointer;
+      position: relative;
+      transition: border-color 0.3s;
+    }
+
+    .nav-logo-img:hover { border-color: var(--gold); }
+
+    .nav-logo-img img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      border-radius: 50%;
+    }
+
+    .nav-logo-img .logo-placeholder {
+      font-size: 1.1rem;
+      color: var(--warm-cream);
+      font-family: 'Great Vibes', cursive;
+      line-height: 1;
+    }
+
+    .nav-logo-upload {
+      position: absolute;
+      inset: 0;
+      opacity: 0;
+      cursor: pointer;
+    }
+
+    .nav-logo-text {
+      font-family: 'Great Vibes', cursive;
+      font-size: 1.8rem;
+      color: var(--terracotta);
+      line-height: 1;
+      letter-spacing: 0.02em;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 2.5rem;
+      list-style: none;
+    }
+
+    .nav-links a {
+      font-size: 0.75rem;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: var(--deep-earth);
+      text-decoration: none;
+      font-weight: 500;
+      transition: color 0.3s;
+    }
+
+    .nav-links a:hover { color: var(--terracotta); }
+
+    /* ── HERO ── */
+    .hero {
+      min-height: 100vh;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .hero-left {
+      background-color: var(--deep-earth);
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-end;
+      padding: 5rem 4rem;
+      position: relative;
+      overflow: hidden;
+    }
+
+    /* Wax pattern background */
+    .hero-left::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background-image:
+        repeating-linear-gradient(45deg, transparent, transparent 20px, rgba(196,98,45,0.06) 20px, rgba(196,98,45,0.06) 21px),
+        repeating-linear-gradient(-45deg, transparent, transparent 20px, rgba(212,168,83,0.06) 20px, rgba(212,168,83,0.06) 21px);
+    }
+
+    .hero-left::after {
+      content: '';
+      position: absolute;
+      bottom: 0; left: 0; right: 0;
+      height: 40%;
+      background: linear-gradient(to top, var(--deep-earth), transparent);
+    }
+
+    .hero-badge {
+      display: inline-block;
+      font-size: 0.65rem;
+      letter-spacing: 0.3em;
+      text-transform: uppercase;
+      color: var(--gold);
+      border: 1px solid var(--gold);
+      padding: 0.4rem 1rem;
+      margin-bottom: 2rem;
+      width: fit-content;
+      position: relative;
+      z-index: 2;
+      animation: fadeUp 1s ease forwards;
+    }
+
+    .hero-title {
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: clamp(3.5rem, 6vw, 6rem);
+      line-height: 0.95;
+      color: var(--warm-cream);
+      position: relative;
+      z-index: 2;
+      animation: fadeUp 1s 0.2s ease forwards;
+      opacity: 0;
+    }
+
+    .hero-title span {
+      color: var(--terracotta);
+      display: block;
+    }
+
+    .hero-subtitle {
+      margin-top: 1.5rem;
+      font-family: 'Cormorant Garamond', serif;
+      font-style: italic;
+      font-size: 1.1rem;
+      color: var(--sand);
+      opacity: 0;
+      animation: fadeUp 1s 0.4s ease forwards;
+      position: relative;
+      z-index: 2;
+    }
+
+    .hero-location {
+      margin-top: 1rem;
+      font-size: 0.7rem;
+      letter-spacing: 0.25em;
+      text-transform: uppercase;
+      color: var(--gold);
+      opacity: 0;
+      animation: fadeUp 1s 0.6s ease forwards;
+      position: relative;
+      z-index: 2;
+    }
+
+    .hero-right {
+      background-color: var(--warm-cream);
+      display: grid;
+      grid-template-rows: 1fr 1fr;
+      position: relative;
+    }
+
+    .hero-image-top {
+      background: linear-gradient(135deg, var(--terracotta) 0%, var(--sienna) 50%, var(--deep-earth) 100%);
+      position: relative;
+      overflow: hidden;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .hero-image-top .fabric-pattern {
+      position: absolute;
+      inset: 0;
+      background-image:
+        radial-gradient(circle at 20% 30%, rgba(212,168,83,0.3) 0%, transparent 50%),
+        radial-gradient(circle at 80% 70%, rgba(250,246,239,0.15) 0%, transparent 50%),
+        repeating-conic-gradient(from 0deg at 50% 50%, var(--terracotta) 0deg, var(--sienna) 30deg, var(--deep-earth) 60deg, var(--sienna) 90deg, var(--terracotta) 120deg);
+      opacity: 0.6;
+    }
+
+    .hero-image-top .center-symbol {
+      font-size: 5rem;
+      z-index: 2;
+      filter: drop-shadow(0 4px 20px rgba(0,0,0,0.4));
+      animation: float 4s ease-in-out infinite;
+    }
+
+    .hero-image-bottom {
+      background-color: var(--sand);
+      display: flex;
+      align-items: center;
+      padding: 3rem;
+      position: relative;
+    }
+
+    .hero-image-bottom::before {
+      content: '';
+      position: absolute;
+      top: 0; left: 0; right: 0;
+      height: 3px;
+      background: linear-gradient(to right, var(--terracotta), var(--gold), var(--wax-blue));
+    }
+
+    .hero-quote {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.4rem;
+      font-style: italic;
+      line-height: 1.6;
+      color: var(--deep-earth);
+      opacity: 0;
+      animation: fadeUp 1s 0.8s ease forwards;
+    }
+
+    .hero-quote cite {
+      display: block;
+      margin-top: 1rem;
+      font-family: 'DM Sans', sans-serif;
+      font-style: normal;
+      font-size: 0.7rem;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--terracotta);
+    }
+
+    /* ── ABOUT ── */
+    .about {
+      padding: 8rem 0;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 0;
+      position: relative;
+    }
+
+    .about-visual {
+      background-color: var(--terracotta);
+      min-height: 600px;
+      position: relative;
+      overflow: hidden;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .photo-frame {
+      width: 300px;
+      height: 400px;
+      position: relative;
+      z-index: 2;
+    }
+
+    .photo-frame::before {
+      content: '';
+      position: absolute;
+      inset: -8px;
+      border: 2px solid rgba(250,246,239,0.35);
+      pointer-events: none;
+    }
+
+    .photo-frame::after {
+      content: '';
+      position: absolute;
+      inset: -20px;
+      border: 1px solid rgba(212,168,83,0.2);
+      pointer-events: none;
+    }
+
+    .photo-inner {
+      width: 100%;
+      height: 100%;
+      overflow: hidden;
+      position: relative;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: rgba(44,24,16,0.4);
+      cursor: pointer;
+    }
+
+    .photo-inner img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: none;
+    }
+
+    .photo-placeholder {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 0.8rem;
+      text-align: center;
+      padding: 2rem;
+    }
+
+    .photo-placeholder-icon { font-size: 3rem; opacity: 0.6; }
+
+    .photo-placeholder-text {
+      font-family: 'DM Sans', sans-serif;
+      font-size: 0.75rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: rgba(250,246,239,0.65);
+      line-height: 1.6;
+    }
+
+    .photo-btn {
+      margin-top: 0.5rem;
+      padding: 0.5rem 1.2rem;
+      border: 1px solid rgba(212,168,83,0.6);
+      background: transparent;
+      color: var(--gold);
+      font-size: 0.65rem;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      cursor: pointer;
+      transition: all 0.3s;
+      font-family: 'DM Sans', sans-serif;
+    }
+
+    .photo-btn:hover { background: rgba(212,168,83,0.15); }
+
+    .photo-upload-input {
+      position: absolute;
+      inset: 0;
+      opacity: 0;
+      cursor: pointer;
+    }
+
+    .photo-caption {
+      position: absolute;
+      bottom: -2.5rem;
+      left: 0; right: 0;
+      text-align: center;
+      font-family: 'Great Vibes', cursive;
+      font-size: 1.1rem;
+      color: rgba(250,246,239,0.7);
+    }
+
+    .about-wax-strip {
+      position: absolute;
+      bottom: 0; left: 0; right: 0;
+      height: 8px;
+      background: repeating-linear-gradient(90deg, var(--gold) 0px, var(--gold) 20px, var(--wax-blue) 20px, var(--wax-blue) 40px, var(--wax-green) 40px, var(--wax-green) 60px, var(--deep-earth) 60px, var(--deep-earth) 80px);
+    }
+
+    .about-content {
+      padding: 5rem 5rem;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      background-color: var(--off-white);
+    }
+
+    .section-label {
+      font-size: 0.65rem;
+      letter-spacing: 0.35em;
+      text-transform: uppercase;
+      color: var(--terracotta);
+      margin-bottom: 1.5rem;
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+    }
+
+    .section-label::before {
+      content: '';
+      display: block;
+      width: 30px;
+      height: 1px;
+      background: var(--terracotta);
+    }
+
+    .section-title {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(2rem, 3.5vw, 3rem);
+      line-height: 1.2;
+      color: var(--deep-earth);
+      margin-bottom: 2rem;
+    }
+
+    .section-title em {
+      color: var(--terracotta);
+      font-style: italic;
+    }
+
+    .about-text {
+      font-size: 0.95rem;
+      line-height: 1.9;
+      color: #5A3E30;
+      margin-bottom: 1.5rem;
+    }
+
+    .about-stats {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1.5rem;
+      margin-top: 3rem;
+      padding-top: 2.5rem;
+      border-top: 1px solid rgba(196,98,45,0.2);
+    }
+
+    .stat-number {
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: 2.5rem;
+      color: var(--terracotta);
+      line-height: 1;
+    }
+
+    .stat-label {
+      font-size: 0.7rem;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--sienna);
+      margin-top: 0.3rem;
+    }
+
+    /* ── SERVICES ── */
+    .services {
+      padding: 8rem 4rem;
+      background-color: var(--deep-earth);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .services::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background-image:
+        repeating-linear-gradient(0deg, transparent, transparent 40px, rgba(212,168,83,0.04) 40px, rgba(212,168,83,0.04) 41px),
+        repeating-linear-gradient(90deg, transparent, transparent 40px, rgba(212,168,83,0.04) 40px, rgba(212,168,83,0.04) 41px);
+    }
+
+    .services-header {
+      text-align: center;
+      margin-bottom: 5rem;
+      position: relative;
+      z-index: 2;
+    }
+
+    .services-header .section-label { justify-content: center; color: var(--gold); }
+    .services-header .section-label::before { background: var(--gold); }
+
+    .services-header h2 {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(2.5rem, 4vw, 4rem);
+      color: var(--warm-cream);
+      line-height: 1.1;
+    }
+
+    .services-header h2 em { color: var(--gold); font-style: italic; }
+
+    .services-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 2px;
+      position: relative;
+      z-index: 2;
+    }
+
+    .service-card {
+      background: rgba(250,246,239,0.04);
+      border: 1px solid rgba(212,168,83,0.15);
+      padding: 3rem 2.5rem;
+      transition: all 0.4s ease;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .service-card::before {
+      content: '';
+      position: absolute;
+      bottom: 0; left: 0;
+      width: 0; height: 3px;
+      background: linear-gradient(to right, var(--terracotta), var(--gold));
+      transition: width 0.4s ease;
+    }
+
+    .service-card:hover {
+      background: rgba(250,246,239,0.08);
+      transform: translateY(-4px);
+    }
+
+    .service-card:hover::before { width: 100%; }
+
+    .service-icon {
+      font-size: 2.5rem;
+      margin-bottom: 1.5rem;
+      display: block;
+    }
+
+    .service-name {
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: 1.4rem;
+      letter-spacing: 0.05em;
+      color: var(--gold);
+      margin-bottom: 1rem;
+    }
+
+    .service-desc {
+      font-size: 0.85rem;
+      line-height: 1.8;
+      color: rgba(245,237,216,0.65);
+    }
+
+    /* ── COLLECTION ── */
+    .collection {
+      padding: 8rem 4rem;
+      background-color: var(--warm-cream);
+    }
+
+    .collection-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-end;
+      margin-bottom: 4rem;
+    }
+
+    .collection-header h2 {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(2.5rem, 4vw, 4rem);
+      line-height: 1.1;
+    }
+
+    .collection-header h2 em { color: var(--terracotta); font-style: italic; }
+
+    .collection-note {
+      font-family: 'Cormorant Garamond', serif;
+      font-style: italic;
+      font-size: 1rem;
+      color: var(--sienna);
+      max-width: 220px;
+      text-align: right;
+    }
+
+    .collection-grid {
+      display: grid;
+      grid-template-columns: 2fr 1fr 1fr;
+      grid-template-rows: auto auto;
+      gap: 1.5rem;
+    }
+
+    .coll-item {
+      position: relative;
+      overflow: hidden;
+      cursor: pointer;
+    }
+
+    .coll-item-inner {
+      width: 100%;
+      aspect-ratio: 3/4;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 4rem;
+      position: relative;
+      overflow: hidden;
+      transition: transform 0.5s ease;
+    }
+
+    .coll-item:hover .coll-item-inner { transform: scale(1.04); }
+
+    .coll-item-1 .coll-item-inner {
+      aspect-ratio: 3/5;
+      background: linear-gradient(145deg, #8B3E1F 0%, #C4622D 40%, #D4A853 100%);
+    }
+    .coll-item-2 .coll-item-inner { background: linear-gradient(145deg, #1E3A5F 0%, #2D5A3D 100%); }
+    .coll-item-3 .coll-item-inner { background: linear-gradient(145deg, #2C1810 0%, #8B3E1F 100%); }
+    .coll-item-4 .coll-item-inner { background: linear-gradient(145deg, #D4A853 0%, #C4622D 70%, #8B3E1F 100%); }
+    .coll-item-5 .coll-item-inner { background: linear-gradient(145deg, #2D5A3D 0%, #1E3A5F 60%, #2C1810 100%); }
+
+    .coll-item-1 { grid-row: span 2; }
+
+    .coll-overlay {
+      position: absolute;
+      inset: 0;
+      background: rgba(44,24,16,0.75);
+      opacity: 0;
+      transition: opacity 0.3s ease;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-end;
+      padding: 2rem;
+    }
+
+    .coll-item:hover .coll-overlay { opacity: 1; }
+
+    .coll-overlay-title {
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: 1.3rem;
+      letter-spacing: 0.1em;
+      color: var(--warm-cream);
+      margin-bottom: 0.3rem;
+    }
+
+    .coll-overlay-sub {
+      font-size: 0.72rem;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: var(--gold);
+    }
+
+    .wax-pattern {
+      position: absolute;
+      inset: 0;
+      opacity: 0.2;
+    }
+
+    /* ── PROCESS ── */
+    .process {
+      padding: 8rem 4rem;
+      background: var(--off-white);
+      position: relative;
+    }
+
+    .process-header {
+      text-align: center;
+      margin-bottom: 5rem;
+    }
+
+    .process-steps {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 0;
+      position: relative;
+    }
+
+    .process-steps::before {
+      content: '';
+      position: absolute;
+      top: 2.2rem;
+      left: 12%;
+      right: 12%;
+      height: 1px;
+      background: linear-gradient(to right, var(--terracotta), var(--gold), var(--wax-blue), var(--wax-green));
+    }
+
+    .process-step {
+      text-align: center;
+      padding: 0 2rem;
+      position: relative;
+    }
+
+    .step-number {
+      width: 4.5rem;
+      height: 4.5rem;
+      border-radius: 50%;
+      background: var(--terracotta);
+      color: var(--warm-cream);
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: 1.4rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 0 auto 2rem;
+      position: relative;
+      z-index: 2;
+      border: 3px solid var(--off-white);
+      box-shadow: 0 0 0 2px var(--terracotta);
+    }
+
+    .process-step:nth-child(2) .step-number { background: var(--gold); box-shadow: 0 0 0 2px var(--gold); color: var(--deep-earth); }
+    .process-step:nth-child(3) .step-number { background: var(--wax-blue); box-shadow: 0 0 0 2px var(--wax-blue); }
+    .process-step:nth-child(4) .step-number { background: var(--wax-green); box-shadow: 0 0 0 2px var(--wax-green); }
+
+    .step-title {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.2rem;
+      font-weight: 600;
+      color: var(--deep-earth);
+      margin-bottom: 0.8rem;
+    }
+
+    .step-desc {
+      font-size: 0.82rem;
+      line-height: 1.7;
+      color: #6B4E3A;
+    }
+
+    /* ── CONTACT ── */
+    .contact {
+      padding: 8rem 4rem;
+      background: linear-gradient(135deg, var(--deep-earth) 0%, #3D1F10 60%, var(--sienna) 100%);
+      position: relative;
+      overflow: hidden;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 6rem;
+      align-items: center;
+    }
+
+    .contact::before {
+      content: '';
+      position: absolute;
+      top: -100px; right: -100px;
+      width: 500px; height: 500px;
+      border-radius: 50%;
+      background: radial-gradient(circle, rgba(212,168,83,0.1) 0%, transparent 70%);
+    }
+
+    .contact-info { position: relative; z-index: 2; }
+
+    .contact-info h2 {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(2.5rem, 4vw, 4rem);
+      color: var(--warm-cream);
+      line-height: 1.1;
+      margin-bottom: 1rem;
+    }
+
+    .contact-info h2 em { color: var(--gold); font-style: italic; }
+
+    .contact-tagline {
+      font-size: 0.9rem;
+      color: rgba(245,237,216,0.6);
+      line-height: 1.7;
+      margin-bottom: 3rem;
+    }
+
+    .contact-detail {
+      display: flex;
+      align-items: flex-start;
+      gap: 1.2rem;
+      margin-bottom: 1.5rem;
+    }
+
+    .contact-icon {
+      font-size: 1.3rem;
+      margin-top: 0.1rem;
+    }
+
+    .contact-detail-label {
+      font-size: 0.65rem;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 0.2rem;
+    }
+
+    .contact-detail-value {
+      font-size: 0.9rem;
+      color: var(--warm-cream);
+    }
+
+    .contact-form { position: relative; z-index: 2; }
+
+    .form-group {
+      margin-bottom: 1.5rem;
+    }
+
+    .form-group label {
+      display: block;
+      font-size: 0.65rem;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 0.6rem;
+    }
+
+    .form-group input,
+    .form-group textarea,
+    .form-group select {
+      width: 100%;
+      background: rgba(250,246,239,0.07);
+      border: 1px solid rgba(212,168,83,0.25);
+      color: var(--warm-cream);
+      padding: 0.9rem 1.2rem;
+      font-family: 'DM Sans', sans-serif;
+      font-size: 0.85rem;
+      outline: none;
+      transition: border-color 0.3s;
+      resize: none;
+    }
+
+    .form-group input::placeholder,
+    .form-group textarea::placeholder { color: rgba(245,237,216,0.3); }
+
+    .form-group input:focus,
+    .form-group textarea:focus,
+    .form-group select:focus { border-color: var(--gold); }
+
+    .form-group select {
+      appearance: none;
+      cursor: pointer;
+    }
+
+    .form-group select option { background: var(--deep-earth); color: var(--warm-cream); }
+
+    .btn-submit {
+      width: 100%;
+      padding: 1.1rem;
+      background: linear-gradient(to right, var(--terracotta), var(--sienna));
+      color: var(--warm-cream);
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: 1rem;
+      letter-spacing: 0.2em;
+      border: none;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .btn-submit::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(to right, var(--gold), var(--terracotta));
+      opacity: 0;
+      transition: opacity 0.3s;
+    }
+
+    .btn-submit:hover::before { opacity: 1; }
+    .btn-submit span { position: relative; z-index: 1; }
+
+    /* ── FOOTER ── */
+    footer {
+      background: #1A0E08;
+      padding: 3rem 4rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      border-top: 1px solid rgba(212,168,83,0.1);
+    }
+
+    .footer-logo {
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: 1.6rem;
+      color: var(--terracotta);
+      letter-spacing: 0.1em;
+    }
+
+    .footer-logo span {
+      display: block;
+      font-size: 0.55rem;
+      letter-spacing: 0.3em;
+      color: var(--gold);
+      margin-top: 0.3rem;
+    }
+
+    .footer-wax {
+      display: flex;
+      gap: 8px;
+    }
+
+    .wax-dot {
+      width: 12px; height: 12px;
+      border-radius: 50%;
+    }
+
+    .footer-copy {
+      font-size: 0.72rem;
+      color: rgba(212,168,83,0.4);
+      letter-spacing: 0.1em;
+    }
+
+    /* ── ANIMATIONS ── */
+    @keyframes fadeUp {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    @keyframes float {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(-12px); }
+    }
+
+    .reveal {
+      opacity: 0;
+      transform: translateY(30px);
+      transition: opacity 0.7s ease, transform 0.7s ease;
+    }
+
+    .reveal.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    /* ── RESPONSIVE ── */
+    @media (max-width: 900px) {
+      nav { padding: 1rem 1.5rem; }
+      .nav-links { display: none; }
+      .hero { grid-template-columns: 1fr; }
+      .hero-right { min-height: 50vh; }
+      .about, .contact { grid-template-columns: 1fr; }
+      .about-visual { min-height: 300px; }
+      .services-grid { grid-template-columns: 1fr; }
+      .collection-grid { grid-template-columns: 1fr 1fr; }
+      .coll-item-1 { grid-row: span 1; }
+      .process-steps { grid-template-columns: 1fr 1fr; }
+      .process-steps::before { display: none; }
+      footer { flex-direction: column; gap: 1.5rem; text-align: center; }
+      .collection-header { flex-direction: column; align-items: flex-start; gap: 1rem; }
+      .collection-header .collection-note { text-align: left; }
+    }
+
+    /* Toast */
+    .toast {
+      position: fixed;
+      bottom: 2rem; right: 2rem;
+      background: var(--terracotta);
+      color: var(--warm-cream);
+      padding: 1rem 2rem;
+      font-size: 0.85rem;
+      letter-spacing: 0.05em;
+      opacity: 0;
+      transform: translateY(20px);
+      transition: all 0.4s ease;
+      z-index: 999;
+      pointer-events: none;
+    }
+    .toast.show { opacity: 1; transform: translateY(0); }
+  </style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <div class="nav-logo">
+    <div class="nav-logo-img" title="Cliquer pour uploader le logo">
+      <span class="logo-placeholder" id="logoPlaceholder">E</span>
+      <img id="logoImg" alt="Logo ENG Fashion" />
+      <input type="file" class="nav-logo-upload" accept="image/*" onchange="uploadLogo(this)" title="Uploader le logo" />
+    </div>
+    <span class="nav-logo-text">ENG Fashion</span>
+  </div>
+  <ul class="nav-links">
+    <li><a href="#about">À propos</a></li>
+    <li><a href="#services">Services</a></li>
+    <li><a href="#collection">Collection</a></li>
+    <li><a href="#contact">Contact</a></li>
+  </ul>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-left">
+    <div class="hero-badge">Atelier · N'Djamena, Tchad</div>
+    <h1 class="hero-title">
+      ENG<br>
+      <span style="font-family:'Great Vibes',cursive; font-size:clamp(2.5rem,5vw,5rem); letter-spacing:0.02em; color:var(--gold); text-transform:none;">Fashion</span><br>
+      <span style="font-size:clamp(0.75rem,1.2vw,1rem); letter-spacing:0.18em; color:var(--sand); font-family:'Cinzel Decorative',cursive; font-weight:400; text-transform:uppercase; line-height:1.8;">Ladeng Derpeng Lorie</span>
+    </h1>
+    <p class="hero-subtitle">Styliste Modéliste & Créatrice de Mode</p>
+    <p class="hero-location">📍 N'Djamena · Tchad · Afrique Centrale</p>
+  </div>
+
+  <div class="hero-right">
+    <div class="hero-image-top">
+      <div class="fabric-pattern"></div>
+      <div class="center-symbol">✦</div>
+    </div>
+    <div class="hero-image-bottom">
+      <blockquote class="hero-quote">
+        « Je tisse l'élégance africaine dans chaque fil, chaque coupe, chaque silhouette. »
+        <cite>— Ladeng Derpeng Lorie</cite>
+      </blockquote>
+    </div>
+  </div>
+</section>
+
+<!-- ABOUT -->
+<section class="about" id="about">
+  <div class="about-visual">
+    <div class="photo-frame">
+      <div class="photo-inner" title="Cliquer pour ajouter votre photo">
+        <img id="designerPhoto" alt="Photo de Ladeng Derpeng Lorie" />
+        <div class="photo-placeholder" id="photoPlaceholder">
+          <div class="photo-placeholder-icon">🪡</div>
+          <div class="photo-placeholder-text">Votre photo ici<br>cliquer pour uploader</div>
+          <button class="photo-btn">+ Ajouter la photo</button>
+        </div>
+        <input type="file" class="photo-upload-input" accept="image/*" onchange="uploadPhoto(this)" />
+      </div>
+      <div class="photo-caption">Ladeng Derpeng Lorie</div>
+    </div>
+    <div class="about-wax-strip"></div>
+  </div>
+
+  <div class="about-content">
+    <p class="section-label reveal">À propos</p>
+    <h2 class="section-title reveal">La <em>vision</em> derrière l'atelier</h2>
+    <p class="about-text reveal">
+      Ladeng Derpeng Lorie est une styliste modéliste tchadienne dont l'atelier, niché au cœur de N'Djamena, est devenu un espace de création unique alliant la richesse des tissus africains à une coupe contemporaine et raffinée.
+    </p>
+    <p class="about-text reveal">
+      Formée aux techniques de la haute couture, elle puise son inspiration dans les motifs wax, les broderies sahéliennes et les drapés traditionnels du Tchad pour créer des pièces qui célèbrent l'identité africaine avec une modernité assumée.
+    </p>
+    <p class="about-text reveal">
+      Chaque création est le résultat d'un dialogue entre la cliente et la créatrice : une conversation sur le style, l'occasion, et la personnalité que la robe doit révéler.
+    </p>
+
+    <div class="about-stats reveal">
+      <div>
+        <div class="stat-number">8+</div>
+        <div class="stat-label">Années d'expérience</div>
+      </div>
+      <div>
+        <div class="stat-number">300+</div>
+        <div class="stat-label">Créations réalisées</div>
+      </div>
+      <div>
+        <div class="stat-number">5★</div>
+        <div class="stat-label">Satisfaction client</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SERVICES -->
+<section class="services" id="services">
+  <div class="services-header">
+    <p class="section-label">Prestations</p>
+    <h2>Ce que je <em>crée</em> pour vous</h2>
+  </div>
+
+  <div class="services-grid">
+    <div class="service-card reveal">
+      <span class="service-icon">👗</span>
+      <div class="service-name">Haute Couture Sur Mesure</div>
+      <p class="service-desc">Des robes de cérémonie, tenues de mariage et pièces d'apparat conçues entièrement selon vos mesures et votre vision. Chaque point est cousu à la main avec une attention absolue aux détails.</p>
+    </div>
+
+    <div class="service-card reveal">
+      <span class="service-icon">🪡</span>
+      <div class="service-name">Prêt-à-Porter Afro-Moderne</div>
+      <p class="service-desc">Des collections capsule qui marient le wax africain, le bogolan et les bazins à des coupes contemporaines portables au quotidien. L'Afrique dans votre garde-robe.</p>
+    </div>
+
+    <div class="service-card reveal">
+      <span class="service-icon">🎨</span>
+      <div class="service-name">Design & Stylisme</div>
+      <p class="service-desc">Conseil en image, relooking complet et création de looks pour événements spéciaux. Je vous accompagne pour exprimer votre personnalité à travers votre style vestimentaire.</p>
+    </div>
+
+    <div class="service-card reveal">
+      <span class="service-icon">🎭</span>
+      <div class="service-name">Costumes & Uniformes</div>
+      <p class="service-desc">Conception de costumes pour spectacles, uniformes d'entreprise personnalisés et tenues de scène pour les artistes. Du projet à la réalisation finale.</p>
+    </div>
+
+    <div class="service-card reveal">
+      <span class="service-icon">💍</span>
+      <div class="service-name">Tenues de Mariée</div>
+      <p class="service-desc">Robes de mariage traditionnelles et modernes, tenues de demoiselles d'honneur et coordinations vestimentaires pour toute la cérémonie. Le plus beau jour mérite la plus belle robe.</p>
+    </div>
+
+    <div class="service-card reveal">
+      <span class="service-icon">📐</span>
+      <div class="service-name">Retouches & Ajustements</div>
+      <p class="service-desc">Service de retouche professionnel pour redonner vie à vos vêtements favoris. Ajustements de coupe, réparations et transformations créatives d'anciennes pièces.</p>
+    </div>
+  </div>
+</section>
+
+<!-- COLLECTION -->
+<section class="collection" id="collection">
+  <div class="collection-header reveal">
+    <div>
+      <p class="section-label">Portfolio</p>
+      <h2>Quelques <em>créations</em></h2>
+    </div>
+    <p class="collection-note">Chaque pièce raconte une histoire — la vôtre.</p>
+  </div>
+
+  <div class="collection-grid">
+    <div class="coll-item coll-item-1 reveal">
+      <div class="coll-item-inner">
+        <span>✦</span>
+        <div class="coll-overlay">
+          <div class="coll-overlay-title">Robe de Gala "Sahel"</div>
+          <div class="coll-overlay-sub">Wax & Soie · Cérémonie</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="coll-item coll-item-2 reveal">
+      <div class="coll-item-inner">
+        <span>◆</span>
+        <div class="coll-overlay">
+          <div class="coll-overlay-title">Ensemble "Logone"</div>
+          <div class="coll-overlay-sub">Bazin Brodé · Mariage</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="coll-item coll-item-3 reveal">
+      <div class="coll-item-inner">
+        <span>★</span>
+        <div class="coll-overlay">
+          <div class="coll-overlay-title">Collection "Chari"</div>
+          <div class="coll-overlay-sub">Afro-Contemporain</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="coll-item coll-item-4 reveal">
+      <div class="coll-item-inner">
+        <span>◉</span>
+        <div class="coll-overlay">
+          <div class="coll-overlay-title">Robe "Dorée du Désert"</div>
+          <div class="coll-overlay-sub">Haute Couture · Sur Mesure</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="coll-item coll-item-5 reveal">
+      <div class="coll-item-inner">
+        <span>◈</span>
+        <div class="coll-overlay">
+          <div class="coll-overlay-title">Tenue "Bornou"</div>
+          <div class="coll-overlay-sub">Fusion Ethnique · Moderne</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PROCESS -->
+<section class="process">
+  <div class="process-header">
+    <p class="section-label" style="justify-content:center">Comment ça marche</p>
+    <h2 class="section-title" style="text-align:center">De <em>l'idée</em> à la création</h2>
+  </div>
+
+  <div class="process-steps">
+    <div class="process-step reveal">
+      <div class="step-number">01</div>
+      <div class="step-title">Consultation</div>
+      <p class="step-desc">Un premier rendez-vous pour discuter de votre vision, l'occasion, vos préférences de tissus et votre style personnel.</p>
+    </div>
+
+    <div class="process-step reveal">
+      <div class="step-number">02</div>
+      <div class="step-title">Conception</div>
+      <p class="step-desc">Création des croquis et sélection des matières. Vous validez le design avant que nous passions à la coupe.</p>
+    </div>
+
+    <div class="process-step reveal">
+      <div class="step-number">03</div>
+      <div class="step-title">Réalisation</div>
+      <p class="step-desc">Toute la magie de l'atelier opère. Coupe, assemblage et finitions à la main avec le plus grand soin.</p>
+    </div>
+
+    <div class="process-step reveal">
+      <div class="step-number">04</div>
+      <div class="step-title">Livraison</div>
+      <p class="step-desc">Essayage final pour les retouches de précision, puis remise de votre création prête à porter avec fierté.</p>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section class="contact" id="contact">
+  <div class="contact-info">
+    <p class="section-label" style="color:var(--gold)">Contact</p>
+    <h2>Donnons vie à votre <em>rêve</em></h2>
+    <p class="contact-tagline">Que ce soit pour une robe de mariée, une tenue de cérémonie ou une création unique, mon atelier est ouvert pour vous accueillir.</p>
+
+    <div class="contact-detail">
+      <span class="contact-icon">📍</span>
+      <div>
+        <div class="contact-detail-label">Atelier</div>
+        <div class="contact-detail-value">N'Djamena, Tchad<br>Quartier disponible sur demande</div>
+      </div>
+    </div>
+
+    <div class="contact-detail">
+      <span class="contact-icon">📞</span>
+      <div>
+        <div class="contact-detail-label">Téléphone / WhatsApp</div>
+        <div class="contact-detail-value">+235 — Sur demande</div>
+      </div>
+    </div>
+
+    <div class="contact-detail">
+      <span class="contact-icon">🕐</span>
+      <div>
+        <div class="contact-detail-label">Horaires</div>
+        <div class="contact-detail-value">Lundi – Samedi : 8h00 – 18h00</div>
+      </div>
+    </div>
+
+    <div class="contact-detail">
+      <span class="contact-icon">✉️</span>
+      <div>
+        <div class="contact-detail-label">Email</div>
+        <div class="contact-detail-value">contact@ladengderpeng.td</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="contact-form">
+    <div class="form-group">
+      <label>Votre nom complet</label>
+      <input type="text" placeholder="Ex : Fatima Idriss..." />
+    </div>
+    <div class="form-group">
+      <label>Téléphone / WhatsApp</label>
+      <input type="tel" placeholder="+235 ..." />
+    </div>
+    <div class="form-group">
+      <label>Type de prestation</label>
+      <select>
+        <option value="">— Choisir une prestation —</option>
+        <option>Robe de Mariée</option>
+        <option>Tenue de Cérémonie</option>
+        <option>Haute Couture Sur Mesure</option>
+        <option>Prêt-à-Porter Afro-Moderne</option>
+        <option>Retouches & Ajustements</option>
+        <option>Autre demande</option>
+      </select>
+    </div>
+    <div class="form-group">
+      <label>Décrivez votre projet</label>
+      <textarea rows="4" placeholder="Parlez-moi de votre occasion, vos couleurs préférées, votre inspiration..."></textarea>
+    </div>
+    <button class="btn-submit" onclick="sendMessage()"><span>✦ ENVOYER MA DEMANDE</span></button>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-logo">
+    <span style="font-family:'Great Vibes',cursive; font-size:2rem; letter-spacing:0.02em;">ENG Fashion</span>
+    <span>Styliste Modéliste · N'Djamena, Tchad</span>
+  </div>
+  <div class="footer-wax">
+    <div class="wax-dot" style="background:var(--terracotta)"></div>
+    <div class="wax-dot" style="background:var(--gold)"></div>
+    <div class="wax-dot" style="background:var(--wax-blue)"></div>
+    <div class="wax-dot" style="background:var(--wax-green)"></div>
+    <div class="wax-dot" style="background:var(--deep-earth)"></div>
+  </div>
+  <div class="footer-copy">© 2025 · Tous droits réservés</div>
+</footer>
+
+<div class="toast" id="toast">✦ Message envoyé ! Je vous réponds très bientôt.</div>
+
+<script>
+  // Scroll reveal
+  const reveals = document.querySelectorAll('.reveal');
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach((entry, i) => {
+      if (entry.isIntersecting) {
+        setTimeout(() => entry.target.classList.add('visible'), i * 80);
+      }
+    });
+  }, { threshold: 0.1 });
+  reveals.forEach(el => observer.observe(el));
+
+  // Form submit
+  function sendMessage() {
+    const toast = document.getElementById('toast');
+    toast.classList.add('show');
+    setTimeout(() => toast.classList.remove('show'), 3500);
+  }
+
+  // Logo upload
+  function uploadLogo(input) {
+    if (input.files && input.files[0]) {
+      const reader = new FileReader();
+      reader.onload = function(e) {
+        const img = document.getElementById('logoImg');
+        const placeholder = document.getElementById('logoPlaceholder');
+        img.src = e.target.result;
+        img.style.display = 'block';
+        placeholder.style.display = 'none';
+      };
+      reader.readAsDataURL(input.files[0]);
+    }
+  }
+
+  // Photo upload
+  function uploadPhoto(input) {
+    if (input.files && input.files[0]) {
+      const reader = new FileReader();
+      reader.onload = function(e) {
+        const img = document.getElementById('designerPhoto');
+        const placeholder = document.getElementById('photoPlaceholder');
+        img.src = e.target.result;
+        img.style.display = 'block';
+        placeholder.style.display = 'none';
+      };
+      reader.readAsDataURL(input.files[0]);
+    }
+  }
+
+  // Smooth nav
+  document.querySelectorAll('a[href^="#"]').forEach(a => {
+    a.addEventListener('click', e => {
+      e.preventDefault();
+      document.querySelector(a.getAttribute('href')).scrollIntoView({ behavior: 'smooth' });
+    });
+  });
+</script>
+</body>
+</html>
