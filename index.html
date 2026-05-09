@@ -7,7 +7,7 @@
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Bebas+Neue&family=DM+Sans:wght@300;400;500&family=Playfair+Display:ital,wght@0,700;1,400;1,700&family=Great+Vibes&family=Cinzel+Decorative:wght@400;700;900&display=swap" rel="stylesheet" />
   <style>
     *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
-
+ 
     :root {
       --terracotta: #C4622D;
       --gold: #D4A853;
@@ -19,16 +19,16 @@
       --wax-green: #2D5A3D;
       --off-white: #FAF6EF;
     }
-
+ 
     html { scroll-behavior: smooth; }
-
+ 
     body {
       font-family: 'DM Sans', sans-serif;
       background-color: var(--off-white);
       color: var(--deep-earth);
       overflow-x: hidden;
     }
-
+ 
     /* ── NAV ── */
     nav {
       position: fixed;
@@ -42,14 +42,14 @@
       backdrop-filter: blur(10px);
       border-bottom: 1px solid rgba(196, 98, 45, 0.15);
     }
-
+ 
     .nav-logo {
       display: flex;
       align-items: center;
       gap: 0.8rem;
       text-decoration: none;
     }
-
+ 
     .nav-logo-img {
       width: 42px;
       height: 42px;
@@ -66,30 +66,30 @@
       position: relative;
       transition: border-color 0.3s;
     }
-
+ 
     .nav-logo-img:hover { border-color: var(--gold); }
-
+ 
     .nav-logo-img img {
       width: 100%;
       height: 100%;
       object-fit: cover;
       border-radius: 50%;
     }
-
+ 
     .nav-logo-img .logo-placeholder {
       font-size: 1.1rem;
       color: var(--warm-cream);
       font-family: 'Great Vibes', cursive;
       line-height: 1;
     }
-
+ 
     .nav-logo-upload {
       position: absolute;
       inset: 0;
       opacity: 0;
       cursor: pointer;
     }
-
+ 
     .nav-logo-text {
       font-family: 'Great Vibes', cursive;
       font-size: 1.8rem;
@@ -97,13 +97,13 @@
       line-height: 1;
       letter-spacing: 0.02em;
     }
-
+ 
     .nav-links {
       display: flex;
       gap: 2.5rem;
       list-style: none;
     }
-
+ 
     .nav-links a {
       font-size: 0.75rem;
       letter-spacing: 0.15em;
@@ -113,9 +113,9 @@
       font-weight: 500;
       transition: color 0.3s;
     }
-
+ 
     .nav-links a:hover { color: var(--terracotta); }
-
+ 
     /* ── HERO ── */
     .hero {
       min-height: 100vh;
@@ -124,7 +124,7 @@
       position: relative;
       overflow: hidden;
     }
-
+ 
     .hero-left {
       background-color: var(--deep-earth);
       display: flex;
@@ -134,7 +134,7 @@
       position: relative;
       overflow: hidden;
     }
-
+ 
     /* Wax pattern background */
     .hero-left::before {
       content: '';
@@ -144,7 +144,7 @@
         repeating-linear-gradient(45deg, transparent, transparent 20px, rgba(196,98,45,0.06) 20px, rgba(196,98,45,0.06) 21px),
         repeating-linear-gradient(-45deg, transparent, transparent 20px, rgba(212,168,83,0.06) 20px, rgba(212,168,83,0.06) 21px);
     }
-
+ 
     .hero-left::after {
       content: '';
       position: absolute;
@@ -152,7 +152,7 @@
       height: 40%;
       background: linear-gradient(to top, var(--deep-earth), transparent);
     }
-
+ 
     .hero-badge {
       display: inline-block;
       font-size: 0.65rem;
@@ -167,7 +167,7 @@
       z-index: 2;
       animation: fadeUp 1s ease forwards;
     }
-
+ 
     .hero-title {
       font-family: 'Bebas Neue', sans-serif;
       font-size: clamp(3.5rem, 6vw, 6rem);
@@ -178,12 +178,12 @@
       animation: fadeUp 1s 0.2s ease forwards;
       opacity: 0;
     }
-
+ 
     .hero-title span {
       color: var(--terracotta);
       display: block;
     }
-
+ 
     .hero-subtitle {
       margin-top: 1.5rem;
       font-family: 'Cormorant Garamond', serif;
@@ -195,7 +195,7 @@
       position: relative;
       z-index: 2;
     }
-
+ 
     .hero-location {
       margin-top: 1rem;
       font-size: 0.7rem;
@@ -207,14 +207,14 @@
       position: relative;
       z-index: 2;
     }
-
+ 
     .hero-right {
       background-color: var(--warm-cream);
       display: grid;
       grid-template-rows: 1fr 1fr;
       position: relative;
     }
-
+ 
     .hero-image-top {
       background: linear-gradient(135deg, var(--terracotta) 0%, var(--sienna) 50%, var(--deep-earth) 100%);
       position: relative;
@@ -223,7 +223,7 @@
       align-items: center;
       justify-content: center;
     }
-
+ 
     .hero-image-top .fabric-pattern {
       position: absolute;
       inset: 0;
@@ -233,14 +233,14 @@
         repeating-conic-gradient(from 0deg at 50% 50%, var(--terracotta) 0deg, var(--sienna) 30deg, var(--deep-earth) 60deg, var(--sienna) 90deg, var(--terracotta) 120deg);
       opacity: 0.6;
     }
-
+ 
     .hero-image-top .center-symbol {
       font-size: 5rem;
       z-index: 2;
       filter: drop-shadow(0 4px 20px rgba(0,0,0,0.4));
       animation: float 4s ease-in-out infinite;
     }
-
+ 
     .hero-image-bottom {
       background-color: var(--sand);
       display: flex;
@@ -248,7 +248,7 @@
       padding: 3rem;
       position: relative;
     }
-
+ 
     .hero-image-bottom::before {
       content: '';
       position: absolute;
@@ -256,7 +256,7 @@
       height: 3px;
       background: linear-gradient(to right, var(--terracotta), var(--gold), var(--wax-blue));
     }
-
+ 
     .hero-quote {
       font-family: 'Cormorant Garamond', serif;
       font-size: 1.4rem;
@@ -266,7 +266,7 @@
       opacity: 0;
       animation: fadeUp 1s 0.8s ease forwards;
     }
-
+ 
     .hero-quote cite {
       display: block;
       margin-top: 1rem;
@@ -277,7 +277,7 @@
       text-transform: uppercase;
       color: var(--terracotta);
     }
-
+ 
     /* ── ABOUT ── */
     .about {
       padding: 8rem 0;
@@ -286,7 +286,7 @@
       gap: 0;
       position: relative;
     }
-
+ 
     .about-visual {
       background-color: var(--terracotta);
       min-height: 600px;
@@ -296,14 +296,14 @@
       align-items: center;
       justify-content: center;
     }
-
+ 
     .photo-frame {
       width: 300px;
       height: 400px;
       position: relative;
       z-index: 2;
     }
-
+ 
     .photo-frame::before {
       content: '';
       position: absolute;
@@ -311,7 +311,7 @@
       border: 2px solid rgba(250,246,239,0.35);
       pointer-events: none;
     }
-
+ 
     .photo-frame::after {
       content: '';
       position: absolute;
@@ -319,7 +319,7 @@
       border: 1px solid rgba(212,168,83,0.2);
       pointer-events: none;
     }
-
+ 
     .photo-inner {
       width: 100%;
       height: 100%;
@@ -331,14 +331,14 @@
       background: rgba(44,24,16,0.4);
       cursor: pointer;
     }
-
+ 
     .photo-inner img {
       width: 100%;
       height: 100%;
       object-fit: cover;
       display: none;
     }
-
+ 
     .photo-placeholder {
       display: flex;
       flex-direction: column;
@@ -347,9 +347,9 @@
       text-align: center;
       padding: 2rem;
     }
-
+ 
     .photo-placeholder-icon { font-size: 3rem; opacity: 0.6; }
-
+ 
     .photo-placeholder-text {
       font-family: 'DM Sans', sans-serif;
       font-size: 0.75rem;
@@ -358,7 +358,7 @@
       color: rgba(250,246,239,0.65);
       line-height: 1.6;
     }
-
+ 
     .photo-btn {
       margin-top: 0.5rem;
       padding: 0.5rem 1.2rem;
@@ -372,16 +372,16 @@
       transition: all 0.3s;
       font-family: 'DM Sans', sans-serif;
     }
-
+ 
     .photo-btn:hover { background: rgba(212,168,83,0.15); }
-
+ 
     .photo-upload-input {
       position: absolute;
       inset: 0;
       opacity: 0;
       cursor: pointer;
     }
-
+ 
     .photo-caption {
       position: absolute;
       bottom: -2.5rem;
@@ -391,14 +391,14 @@
       font-size: 1.1rem;
       color: rgba(250,246,239,0.7);
     }
-
+ 
     .about-wax-strip {
       position: absolute;
       bottom: 0; left: 0; right: 0;
       height: 8px;
       background: repeating-linear-gradient(90deg, var(--gold) 0px, var(--gold) 20px, var(--wax-blue) 20px, var(--wax-blue) 40px, var(--wax-green) 40px, var(--wax-green) 60px, var(--deep-earth) 60px, var(--deep-earth) 80px);
     }
-
+ 
     .about-content {
       padding: 5rem 5rem;
       display: flex;
@@ -406,7 +406,7 @@
       justify-content: center;
       background-color: var(--off-white);
     }
-
+ 
     .section-label {
       font-size: 0.65rem;
       letter-spacing: 0.35em;
@@ -417,7 +417,7 @@
       align-items: center;
       gap: 1rem;
     }
-
+ 
     .section-label::before {
       content: '';
       display: block;
@@ -425,7 +425,7 @@
       height: 1px;
       background: var(--terracotta);
     }
-
+ 
     .section-title {
       font-family: 'Cormorant Garamond', serif;
       font-size: clamp(2rem, 3.5vw, 3rem);
@@ -433,19 +433,19 @@
       color: var(--deep-earth);
       margin-bottom: 2rem;
     }
-
+ 
     .section-title em {
       color: var(--terracotta);
       font-style: italic;
     }
-
+ 
     .about-text {
       font-size: 0.95rem;
       line-height: 1.9;
       color: #5A3E30;
       margin-bottom: 1.5rem;
     }
-
+ 
     .about-stats {
       display: grid;
       grid-template-columns: repeat(3, 1fr);
@@ -454,14 +454,14 @@
       padding-top: 2.5rem;
       border-top: 1px solid rgba(196,98,45,0.2);
     }
-
+ 
     .stat-number {
       font-family: 'Bebas Neue', sans-serif;
       font-size: 2.5rem;
       color: var(--terracotta);
       line-height: 1;
     }
-
+ 
     .stat-label {
       font-size: 0.7rem;
       letter-spacing: 0.1em;
@@ -469,7 +469,7 @@
       color: var(--sienna);
       margin-top: 0.3rem;
     }
-
+ 
     /* ── SERVICES ── */
     .services {
       padding: 8rem 4rem;
@@ -477,7 +477,7 @@
       position: relative;
       overflow: hidden;
     }
-
+ 
     .services::before {
       content: '';
       position: absolute;
@@ -486,26 +486,26 @@
         repeating-linear-gradient(0deg, transparent, transparent 40px, rgba(212,168,83,0.04) 40px, rgba(212,168,83,0.04) 41px),
         repeating-linear-gradient(90deg, transparent, transparent 40px, rgba(212,168,83,0.04) 40px, rgba(212,168,83,0.04) 41px);
     }
-
+ 
     .services-header {
       text-align: center;
       margin-bottom: 5rem;
       position: relative;
       z-index: 2;
     }
-
+ 
     .services-header .section-label { justify-content: center; color: var(--gold); }
     .services-header .section-label::before { background: var(--gold); }
-
+ 
     .services-header h2 {
       font-family: 'Cormorant Garamond', serif;
       font-size: clamp(2.5rem, 4vw, 4rem);
       color: var(--warm-cream);
       line-height: 1.1;
     }
-
+ 
     .services-header h2 em { color: var(--gold); font-style: italic; }
-
+ 
     .services-grid {
       display: grid;
       grid-template-columns: repeat(3, 1fr);
@@ -513,7 +513,7 @@
       position: relative;
       z-index: 2;
     }
-
+ 
     .service-card {
       background: rgba(250,246,239,0.04);
       border: 1px solid rgba(212,168,83,0.15);
@@ -522,7 +522,7 @@
       position: relative;
       overflow: hidden;
     }
-
+ 
     .service-card::before {
       content: '';
       position: absolute;
@@ -531,20 +531,20 @@
       background: linear-gradient(to right, var(--terracotta), var(--gold));
       transition: width 0.4s ease;
     }
-
+ 
     .service-card:hover {
       background: rgba(250,246,239,0.08);
       transform: translateY(-4px);
     }
-
+ 
     .service-card:hover::before { width: 100%; }
-
+ 
     .service-icon {
       font-size: 2.5rem;
       margin-bottom: 1.5rem;
       display: block;
     }
-
+ 
     .service-name {
       font-family: 'Bebas Neue', sans-serif;
       font-size: 1.4rem;
@@ -552,34 +552,34 @@
       color: var(--gold);
       margin-bottom: 1rem;
     }
-
+ 
     .service-desc {
       font-size: 0.85rem;
       line-height: 1.8;
       color: rgba(245,237,216,0.65);
     }
-
+ 
     /* ── COLLECTION ── */
     .collection {
       padding: 8rem 4rem;
       background-color: var(--warm-cream);
     }
-
+ 
     .collection-header {
       display: flex;
       justify-content: space-between;
       align-items: flex-end;
       margin-bottom: 4rem;
     }
-
+ 
     .collection-header h2 {
       font-family: 'Cormorant Garamond', serif;
       font-size: clamp(2.5rem, 4vw, 4rem);
       line-height: 1.1;
     }
-
+ 
     .collection-header h2 em { color: var(--terracotta); font-style: italic; }
-
+ 
     .collection-note {
       font-family: 'Cormorant Garamond', serif;
       font-style: italic;
@@ -588,20 +588,20 @@
       max-width: 220px;
       text-align: right;
     }
-
+ 
     .collection-grid {
       display: grid;
       grid-template-columns: 2fr 1fr 1fr;
       grid-template-rows: auto auto;
       gap: 1.5rem;
     }
-
+ 
     .coll-item {
       position: relative;
       overflow: hidden;
       cursor: pointer;
     }
-
+ 
     .coll-item-inner {
       width: 100%;
       aspect-ratio: 3/4;
@@ -613,9 +613,9 @@
       overflow: hidden;
       transition: transform 0.5s ease;
     }
-
+ 
     .coll-item:hover .coll-item-inner { transform: scale(1.04); }
-
+ 
     .coll-item-1 .coll-item-inner {
       aspect-ratio: 3/5;
       background: linear-gradient(145deg, #8B3E1F 0%, #C4622D 40%, #D4A853 100%);
@@ -624,9 +624,9 @@
     .coll-item-3 .coll-item-inner { background: linear-gradient(145deg, #2C1810 0%, #8B3E1F 100%); }
     .coll-item-4 .coll-item-inner { background: linear-gradient(145deg, #D4A853 0%, #C4622D 70%, #8B3E1F 100%); }
     .coll-item-5 .coll-item-inner { background: linear-gradient(145deg, #2D5A3D 0%, #1E3A5F 60%, #2C1810 100%); }
-
+ 
     .coll-item-1 { grid-row: span 2; }
-
+ 
     .coll-overlay {
       position: absolute;
       inset: 0;
@@ -638,9 +638,9 @@
       justify-content: flex-end;
       padding: 2rem;
     }
-
+ 
     .coll-item:hover .coll-overlay { opacity: 1; }
-
+ 
     .coll-overlay-title {
       font-family: 'Bebas Neue', sans-serif;
       font-size: 1.3rem;
@@ -648,39 +648,39 @@
       color: var(--warm-cream);
       margin-bottom: 0.3rem;
     }
-
+ 
     .coll-overlay-sub {
       font-size: 0.72rem;
       letter-spacing: 0.15em;
       text-transform: uppercase;
       color: var(--gold);
     }
-
+ 
     .wax-pattern {
       position: absolute;
       inset: 0;
       opacity: 0.2;
     }
-
+ 
     /* ── PROCESS ── */
     .process {
       padding: 8rem 4rem;
       background: var(--off-white);
       position: relative;
     }
-
+ 
     .process-header {
       text-align: center;
       margin-bottom: 5rem;
     }
-
+ 
     .process-steps {
       display: grid;
       grid-template-columns: repeat(4, 1fr);
       gap: 0;
       position: relative;
     }
-
+ 
     .process-steps::before {
       content: '';
       position: absolute;
@@ -690,13 +690,13 @@
       height: 1px;
       background: linear-gradient(to right, var(--terracotta), var(--gold), var(--wax-blue), var(--wax-green));
     }
-
+ 
     .process-step {
       text-align: center;
       padding: 0 2rem;
       position: relative;
     }
-
+ 
     .step-number {
       width: 4.5rem;
       height: 4.5rem;
@@ -714,11 +714,11 @@
       border: 3px solid var(--off-white);
       box-shadow: 0 0 0 2px var(--terracotta);
     }
-
+ 
     .process-step:nth-child(2) .step-number { background: var(--gold); box-shadow: 0 0 0 2px var(--gold); color: var(--deep-earth); }
     .process-step:nth-child(3) .step-number { background: var(--wax-blue); box-shadow: 0 0 0 2px var(--wax-blue); }
     .process-step:nth-child(4) .step-number { background: var(--wax-green); box-shadow: 0 0 0 2px var(--wax-green); }
-
+ 
     .step-title {
       font-family: 'Cormorant Garamond', serif;
       font-size: 1.2rem;
@@ -726,13 +726,13 @@
       color: var(--deep-earth);
       margin-bottom: 0.8rem;
     }
-
+ 
     .step-desc {
       font-size: 0.82rem;
       line-height: 1.7;
       color: #6B4E3A;
     }
-
+ 
     /* ── CONTACT ── */
     .contact {
       padding: 8rem 4rem;
@@ -744,7 +744,7 @@
       gap: 6rem;
       align-items: center;
     }
-
+ 
     .contact::before {
       content: '';
       position: absolute;
@@ -753,9 +753,9 @@
       border-radius: 50%;
       background: radial-gradient(circle, rgba(212,168,83,0.1) 0%, transparent 70%);
     }
-
+ 
     .contact-info { position: relative; z-index: 2; }
-
+ 
     .contact-info h2 {
       font-family: 'Cormorant Garamond', serif;
       font-size: clamp(2.5rem, 4vw, 4rem);
@@ -763,28 +763,28 @@
       line-height: 1.1;
       margin-bottom: 1rem;
     }
-
+ 
     .contact-info h2 em { color: var(--gold); font-style: italic; }
-
+ 
     .contact-tagline {
       font-size: 0.9rem;
       color: rgba(245,237,216,0.6);
       line-height: 1.7;
       margin-bottom: 3rem;
     }
-
+ 
     .contact-detail {
       display: flex;
       align-items: flex-start;
       gap: 1.2rem;
       margin-bottom: 1.5rem;
     }
-
+ 
     .contact-icon {
       font-size: 1.3rem;
       margin-top: 0.1rem;
     }
-
+ 
     .contact-detail-label {
       font-size: 0.65rem;
       letter-spacing: 0.2em;
@@ -792,18 +792,18 @@
       color: var(--gold);
       margin-bottom: 0.2rem;
     }
-
+ 
     .contact-detail-value {
       font-size: 0.9rem;
       color: var(--warm-cream);
     }
-
+ 
     .contact-form { position: relative; z-index: 2; }
-
+ 
     .form-group {
       margin-bottom: 1.5rem;
     }
-
+ 
     .form-group label {
       display: block;
       font-size: 0.65rem;
@@ -812,7 +812,7 @@
       color: var(--gold);
       margin-bottom: 0.6rem;
     }
-
+ 
     .form-group input,
     .form-group textarea,
     .form-group select {
@@ -827,21 +827,21 @@
       transition: border-color 0.3s;
       resize: none;
     }
-
+ 
     .form-group input::placeholder,
     .form-group textarea::placeholder { color: rgba(245,237,216,0.3); }
-
+ 
     .form-group input:focus,
     .form-group textarea:focus,
     .form-group select:focus { border-color: var(--gold); }
-
+ 
     .form-group select {
       appearance: none;
       cursor: pointer;
     }
-
+ 
     .form-group select option { background: var(--deep-earth); color: var(--warm-cream); }
-
+ 
     .btn-submit {
       width: 100%;
       padding: 1.1rem;
@@ -856,7 +856,7 @@
       position: relative;
       overflow: hidden;
     }
-
+ 
     .btn-submit::before {
       content: '';
       position: absolute;
@@ -865,10 +865,331 @@
       opacity: 0;
       transition: opacity 0.3s;
     }
-
+ 
     .btn-submit:hover::before { opacity: 1; }
     .btn-submit span { position: relative; z-index: 1; }
-
+ 
+    /* ── AVIS CLIENTS ── */
+    .reviews {
+      padding: 8rem 4rem;
+      background: var(--sand);
+      position: relative;
+      overflow: hidden;
+    }
+ 
+    .reviews::before {
+      content: '❝';
+      position: absolute;
+      top: 3rem; left: 4rem;
+      font-size: 12rem;
+      color: rgba(196,98,45,0.07);
+      font-family: Georgia, serif;
+      line-height: 1;
+      pointer-events: none;
+    }
+ 
+    .reviews-header {
+      text-align: center;
+      margin-bottom: 4rem;
+    }
+ 
+    /* Score global */
+    .reviews-score-bar {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 3rem;
+      background: var(--deep-earth);
+      padding: 2.5rem 4rem;
+      margin-bottom: 4rem;
+      position: relative;
+      overflow: hidden;
+    }
+ 
+    .reviews-score-bar::before {
+      content: '';
+      position: absolute;
+      bottom: 0; left: 0; right: 0;
+      height: 3px;
+      background: linear-gradient(to right, var(--terracotta), var(--gold), var(--wax-blue));
+    }
+ 
+    .score-big {
+      text-align: center;
+    }
+ 
+    .score-number {
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: 5rem;
+      color: var(--gold);
+      line-height: 1;
+    }
+ 
+    .score-stars-display {
+      display: flex;
+      gap: 4px;
+      justify-content: center;
+      margin: 0.3rem 0;
+    }
+ 
+    .score-stars-display .star-icon {
+      font-size: 1.2rem;
+      color: var(--gold);
+    }
+ 
+    .score-count {
+      font-size: 0.72rem;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: rgba(245,237,216,0.5);
+    }
+ 
+    .score-divider {
+      width: 1px;
+      height: 80px;
+      background: rgba(212,168,83,0.2);
+    }
+ 
+    .score-breakdown {
+      display: flex;
+      flex-direction: column;
+      gap: 0.5rem;
+    }
+ 
+    .breakdown-row {
+      display: flex;
+      align-items: center;
+      gap: 0.8rem;
+    }
+ 
+    .breakdown-label {
+      font-size: 0.7rem;
+      color: var(--gold);
+      width: 1.5rem;
+      text-align: right;
+    }
+ 
+    .breakdown-bar {
+      width: 120px;
+      height: 5px;
+      background: rgba(250,246,239,0.1);
+      border-radius: 3px;
+      overflow: hidden;
+    }
+ 
+    .breakdown-fill {
+      height: 100%;
+      background: linear-gradient(to right, var(--terracotta), var(--gold));
+      border-radius: 3px;
+      transition: width 1s ease;
+    }
+ 
+    .breakdown-count {
+      font-size: 0.65rem;
+      color: rgba(245,237,216,0.4);
+      width: 1rem;
+    }
+ 
+    /* Cartes avis existants */
+    .reviews-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1.5rem;
+      margin-bottom: 4rem;
+    }
+ 
+    .review-card {
+      background: var(--off-white);
+      padding: 2rem;
+      border-left: 3px solid var(--terracotta);
+      position: relative;
+      transition: transform 0.3s, box-shadow 0.3s;
+    }
+ 
+    .review-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 12px 40px rgba(44,24,16,0.12);
+    }
+ 
+    .review-card-stars {
+      display: flex;
+      gap: 3px;
+      margin-bottom: 1rem;
+    }
+ 
+    .star-filled { color: var(--gold); font-size: 0.9rem; }
+    .star-empty { color: #D5C9B8; font-size: 0.9rem; }
+ 
+    .review-text {
+      font-family: 'Cormorant Garamond', serif;
+      font-style: italic;
+      font-size: 1rem;
+      line-height: 1.7;
+      color: var(--deep-earth);
+      margin-bottom: 1.2rem;
+    }
+ 
+    .review-author {
+      display: flex;
+      align-items: center;
+      gap: 0.8rem;
+    }
+ 
+    .review-avatar {
+      width: 36px; height: 36px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: 0.85rem;
+      color: var(--warm-cream);
+      flex-shrink: 0;
+    }
+ 
+    .review-name {
+      font-size: 0.78rem;
+      font-weight: 500;
+      color: var(--deep-earth);
+      letter-spacing: 0.05em;
+    }
+ 
+    .review-date {
+      font-size: 0.65rem;
+      color: #9B7B65;
+      letter-spacing: 0.08em;
+    }
+ 
+    /* Formulaire avis */
+    .review-form-wrapper {
+      background: var(--warm-cream);
+      border: 1px solid rgba(196,98,45,0.2);
+      padding: 3rem;
+      max-width: 700px;
+      margin: 0 auto;
+    }
+ 
+    .review-form-title {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.6rem;
+      color: var(--deep-earth);
+      margin-bottom: 0.5rem;
+    }
+ 
+    .review-form-title em { color: var(--terracotta); font-style: italic; }
+ 
+    .review-form-sub {
+      font-size: 0.8rem;
+      color: #9B7B65;
+      margin-bottom: 2rem;
+      letter-spacing: 0.05em;
+    }
+ 
+    .star-rating-input {
+      display: flex;
+      gap: 8px;
+      margin-bottom: 1.5rem;
+      flex-direction: row-reverse;
+      justify-content: flex-end;
+    }
+ 
+    .star-rating-input input { display: none; }
+ 
+    .star-rating-input label {
+      font-size: 2rem;
+      color: #D5C9B8;
+      cursor: pointer;
+      transition: color 0.2s, transform 0.2s;
+    }
+ 
+    .star-rating-input label:hover,
+    .star-rating-input label:hover ~ label,
+    .star-rating-input input:checked ~ label {
+      color: var(--gold);
+      transform: scale(1.15);
+    }
+ 
+    .review-form-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1rem;
+      margin-bottom: 1rem;
+    }
+ 
+    .review-input {
+      width: 100%;
+      background: var(--off-white);
+      border: 1px solid rgba(196,98,45,0.2);
+      color: var(--deep-earth);
+      padding: 0.85rem 1rem;
+      font-family: 'DM Sans', sans-serif;
+      font-size: 0.85rem;
+      outline: none;
+      transition: border-color 0.3s;
+    }
+ 
+    .review-input:focus { border-color: var(--terracotta); }
+    .review-input::placeholder { color: #C4A990; }
+ 
+    .review-textarea {
+      width: 100%;
+      background: var(--off-white);
+      border: 1px solid rgba(196,98,45,0.2);
+      color: var(--deep-earth);
+      padding: 0.85rem 1rem;
+      font-family: 'DM Sans', sans-serif;
+      font-size: 0.85rem;
+      outline: none;
+      resize: none;
+      transition: border-color 0.3s;
+      margin-bottom: 1rem;
+    }
+ 
+    .review-textarea:focus { border-color: var(--terracotta); }
+    .review-textarea::placeholder { color: #C4A990; }
+ 
+    .btn-review {
+      padding: 0.9rem 2.5rem;
+      background: linear-gradient(to right, var(--terracotta), var(--sienna));
+      color: var(--warm-cream);
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: 0.95rem;
+      letter-spacing: 0.2em;
+      border: none;
+      cursor: pointer;
+      transition: all 0.3s;
+      position: relative;
+      overflow: hidden;
+    }
+ 
+    .btn-review::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(to right, var(--gold), var(--terracotta));
+      opacity: 0;
+      transition: opacity 0.3s;
+    }
+ 
+    .btn-review:hover::before { opacity: 1; }
+    .btn-review span { position: relative; z-index: 1; }
+ 
+    .star-hint {
+      font-size: 0.7rem;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--sienna);
+      margin-bottom: 0.4rem;
+    }
+ 
+    @media (max-width: 900px) {
+      .reviews-grid { grid-template-columns: 1fr; }
+      .reviews-score-bar { flex-direction: column; gap: 1.5rem; padding: 2rem; }
+      .score-divider { width: 80px; height: 1px; }
+      .review-form-grid { grid-template-columns: 1fr; }
+      .reviews { padding: 5rem 1.5rem; }
+    }
+ 
     /* ── FOOTER ── */
     footer {
       background: #1A0E08;
@@ -878,14 +1199,14 @@
       align-items: center;
       border-top: 1px solid rgba(212,168,83,0.1);
     }
-
+ 
     .footer-logo {
       font-family: 'Bebas Neue', sans-serif;
       font-size: 1.6rem;
       color: var(--terracotta);
       letter-spacing: 0.1em;
     }
-
+ 
     .footer-logo span {
       display: block;
       font-size: 0.55rem;
@@ -893,45 +1214,345 @@
       color: var(--gold);
       margin-top: 0.3rem;
     }
-
+ 
     .footer-wax {
       display: flex;
       gap: 8px;
     }
-
+ 
     .wax-dot {
       width: 12px; height: 12px;
       border-radius: 50%;
     }
-
+ 
     .footer-copy {
       font-size: 0.72rem;
       color: rgba(212,168,83,0.4);
       letter-spacing: 0.1em;
     }
-
+ 
+    /* ── AVIS CLIENTS ── */
+    .reviews {
+      padding: 8rem 4rem;
+      background-color: var(--sand);
+      position: relative;
+      overflow: hidden;
+    }
+ 
+    .reviews::before {
+      content: '❝';
+      position: absolute;
+      top: 3rem; left: 3rem;
+      font-size: 12rem;
+      color: rgba(196,98,45,0.07);
+      font-family: 'Cormorant Garamond', serif;
+      line-height: 1;
+      pointer-events: none;
+    }
+ 
+    .reviews-header {
+      text-align: center;
+      margin-bottom: 4rem;
+    }
+ 
+    /* Global rating bar */
+    .global-rating {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 0.8rem;
+      margin-bottom: 4rem;
+      padding: 2.5rem;
+      background: var(--off-white);
+      border-left: 4px solid var(--terracotta);
+      max-width: 420px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+ 
+    .global-score {
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: 5rem;
+      color: var(--terracotta);
+      line-height: 1;
+    }
+ 
+    .global-stars {
+      display: flex;
+      gap: 0.3rem;
+    }
+ 
+    .global-stars .star {
+      font-size: 1.6rem;
+      color: var(--gold);
+    }
+ 
+    .global-count {
+      font-size: 0.75rem;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: var(--sienna);
+    }
+ 
+    /* Rating bars breakdown */
+    .rating-bars {
+      width: 100%;
+      margin-top: 1rem;
+    }
+ 
+    .rating-bar-row {
+      display: flex;
+      align-items: center;
+      gap: 0.8rem;
+      margin-bottom: 0.5rem;
+    }
+ 
+    .rating-bar-label {
+      font-size: 0.72rem;
+      color: var(--sienna);
+      width: 30px;
+      text-align: right;
+      flex-shrink: 0;
+    }
+ 
+    .rating-bar-track {
+      flex: 1;
+      height: 6px;
+      background: rgba(196,98,45,0.15);
+      border-radius: 3px;
+      overflow: hidden;
+    }
+ 
+    .rating-bar-fill {
+      height: 100%;
+      background: linear-gradient(to right, var(--terracotta), var(--gold));
+      border-radius: 3px;
+      transition: width 1s ease;
+    }
+ 
+    .rating-bar-count {
+      font-size: 0.7rem;
+      color: var(--sienna);
+      width: 20px;
+      flex-shrink: 0;
+    }
+ 
+    /* Reviews grid */
+    .reviews-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1.5rem;
+      margin-bottom: 4rem;
+    }
+ 
+    .review-card {
+      background: var(--off-white);
+      padding: 2rem;
+      position: relative;
+      border-bottom: 3px solid transparent;
+      transition: border-color 0.3s, transform 0.3s;
+    }
+ 
+    .review-card:hover {
+      border-color: var(--terracotta);
+      transform: translateY(-4px);
+    }
+ 
+    .review-stars {
+      display: flex;
+      gap: 0.2rem;
+      margin-bottom: 1rem;
+    }
+ 
+    .review-stars .star {
+      font-size: 1rem;
+      color: #ddd;
+      transition: color 0.2s;
+    }
+ 
+    .review-stars .star.filled { color: var(--gold); }
+ 
+    .review-text {
+      font-family: 'Cormorant Garamond', serif;
+      font-style: italic;
+      font-size: 1rem;
+      line-height: 1.7;
+      color: var(--deep-earth);
+      margin-bottom: 1.5rem;
+    }
+ 
+    .review-author {
+      display: flex;
+      align-items: center;
+      gap: 0.8rem;
+    }
+ 
+    .review-avatar {
+      width: 36px; height: 36px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 0.9rem;
+      font-family: 'Bebas Neue', sans-serif;
+      color: var(--warm-cream);
+      flex-shrink: 0;
+    }
+ 
+    .review-author-name {
+      font-size: 0.8rem;
+      font-weight: 500;
+      color: var(--deep-earth);
+      letter-spacing: 0.05em;
+    }
+ 
+    .review-author-date {
+      font-size: 0.68rem;
+      color: var(--sienna);
+      margin-top: 0.1rem;
+    }
+ 
+    .review-badge {
+      position: absolute;
+      top: 1.2rem; right: 1.2rem;
+      font-size: 0.6rem;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: var(--terracotta);
+      border: 1px solid rgba(196,98,45,0.3);
+      padding: 0.2rem 0.6rem;
+    }
+ 
+    /* Add review form */
+    .add-review {
+      background: var(--deep-earth);
+      padding: 3rem;
+      position: relative;
+      overflow: hidden;
+    }
+ 
+    .add-review::before {
+      content: '';
+      position: absolute;
+      top: 0; left: 0; right: 0;
+      height: 3px;
+      background: linear-gradient(to right, var(--terracotta), var(--gold), var(--wax-blue));
+    }
+ 
+    .add-review h3 {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.6rem;
+      color: var(--warm-cream);
+      margin-bottom: 0.5rem;
+    }
+ 
+    .add-review p {
+      font-size: 0.8rem;
+      color: rgba(245,237,216,0.5);
+      margin-bottom: 2rem;
+      letter-spacing: 0.05em;
+    }
+ 
+    .review-form-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1rem;
+      margin-bottom: 1rem;
+    }
+ 
+    .star-picker {
+      display: flex;
+      gap: 0.5rem;
+      margin-bottom: 1rem;
+      align-items: center;
+    }
+ 
+    .star-picker-label {
+      font-size: 0.65rem;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-right: 0.5rem;
+    }
+ 
+    .star-picker .pick-star {
+      font-size: 1.8rem;
+      color: rgba(212,168,83,0.3);
+      cursor: pointer;
+      transition: color 0.15s, transform 0.15s;
+      line-height: 1;
+      user-select: none;
+    }
+ 
+    .star-picker .pick-star:hover,
+    .star-picker .pick-star.active {
+      color: var(--gold);
+      transform: scale(1.15);
+    }
+ 
+    .review-form-group input,
+    .review-form-group textarea {
+      width: 100%;
+      background: rgba(250,246,239,0.07);
+      border: 1px solid rgba(212,168,83,0.2);
+      color: var(--warm-cream);
+      padding: 0.8rem 1rem;
+      font-family: 'DM Sans', sans-serif;
+      font-size: 0.85rem;
+      outline: none;
+      transition: border-color 0.3s;
+      resize: none;
+    }
+ 
+    .review-form-group input::placeholder,
+    .review-form-group textarea::placeholder { color: rgba(245,237,216,0.25); }
+ 
+    .review-form-group input:focus,
+    .review-form-group textarea:focus { border-color: var(--gold); }
+ 
+    .btn-review {
+      margin-top: 1rem;
+      padding: 0.9rem 2.5rem;
+      background: linear-gradient(to right, var(--terracotta), var(--sienna));
+      color: var(--warm-cream);
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: 0.95rem;
+      letter-spacing: 0.2em;
+      border: none;
+      cursor: pointer;
+      transition: opacity 0.3s;
+    }
+ 
+    .btn-review:hover { opacity: 0.85; }
+ 
+    @media (max-width: 900px) {
+      .reviews-grid { grid-template-columns: 1fr; }
+      .review-form-grid { grid-template-columns: 1fr; }
+      .add-review { padding: 2rem 1.5rem; }
+    }
+ 
     /* ── ANIMATIONS ── */
     @keyframes fadeUp {
       from { opacity: 0; transform: translateY(20px); }
       to { opacity: 1; transform: translateY(0); }
     }
-
+ 
     @keyframes float {
       0%, 100% { transform: translateY(0); }
       50% { transform: translateY(-12px); }
     }
-
+ 
     .reveal {
       opacity: 0;
       transform: translateY(30px);
       transition: opacity 0.7s ease, transform 0.7s ease;
     }
-
+ 
     .reveal.visible {
       opacity: 1;
       transform: translateY(0);
     }
-
+ 
     /* ── RESPONSIVE ── */
     @media (max-width: 900px) {
       nav { padding: 1rem 1.5rem; }
@@ -949,7 +1570,7 @@
       .collection-header { flex-direction: column; align-items: flex-start; gap: 1rem; }
       .collection-header .collection-note { text-align: left; }
     }
-
+ 
     /* Toast */
     .toast {
       position: fixed;
@@ -969,7 +1590,7 @@
   </style>
 </head>
 <body>
-
+ 
 <!-- NAV -->
 <nav>
   <div class="nav-logo">
@@ -984,23 +1605,24 @@
     <li><a href="#about">À propos</a></li>
     <li><a href="#services">Services</a></li>
     <li><a href="#collection">Collection</a></li>
+    <li><a href="#reviews">Avis</a></li>
     <li><a href="#contact">Contact</a></li>
   </ul>
 </nav>
-
+ 
 <!-- HERO -->
 <section class="hero">
   <div class="hero-left">
-    <div class="hero-badge">Atelier de Stylisme Modélisme</div>
+    <div class="hero-badge">Atelier · N'Djamena, Tchad</div>
     <h1 class="hero-title">
       ENG<br>
       <span style="font-family:'Great Vibes',cursive; font-size:clamp(2.5rem,5vw,5rem); letter-spacing:0.02em; color:var(--gold); text-transform:none;">Fashion</span><br>
       <span style="font-size:clamp(0.75rem,1.2vw,1rem); letter-spacing:0.18em; color:var(--sand); font-family:'Cinzel Decorative',cursive; font-weight:400; text-transform:uppercase; line-height:1.8;">Ladeng Derpeng Lorie</span>
     </h1>
     <p class="hero-subtitle">Styliste Modéliste & Créatrice de Mode</p>
-    <p class="hero-location">📍 N'Djamena · Tchad · Chagoua</p>
+    <p class="hero-location">📍 N'Djamena · Tchad · Afrique Centrale</p>
   </div>
-
+ 
   <div class="hero-right">
     <div class="hero-image-top">
       <div class="fabric-pattern"></div>
@@ -1014,7 +1636,7 @@
     </div>
   </div>
 </section>
-
+ 
 <!-- ABOUT -->
 <section class="about" id="about">
   <div class="about-visual">
@@ -1032,7 +1654,7 @@
     </div>
     <div class="about-wax-strip"></div>
   </div>
-
+ 
   <div class="about-content">
     <p class="section-label reveal">À propos</p>
     <h2 class="section-title reveal">La <em>vision</em> derrière l'atelier</h2>
@@ -1045,7 +1667,7 @@
     <p class="about-text reveal">
       Chaque création est le résultat d'un dialogue entre la cliente et la créatrice : une conversation sur le style, l'occasion, et la personnalité que la robe doit révéler.
     </p>
-
+ 
     <div class="about-stats reveal">
       <div>
         <div class="stat-number">8+</div>
@@ -1062,45 +1684,45 @@
     </div>
   </div>
 </section>
-
+ 
 <!-- SERVICES -->
 <section class="services" id="services">
   <div class="services-header">
     <p class="section-label">Prestations</p>
     <h2>Ce que je <em>crée</em> pour vous</h2>
   </div>
-
+ 
   <div class="services-grid">
     <div class="service-card reveal">
       <span class="service-icon">👗</span>
       <div class="service-name">Haute Couture Sur Mesure</div>
       <p class="service-desc">Des robes de cérémonie, tenues de mariage et pièces d'apparat conçues entièrement selon vos mesures et votre vision. Chaque point est cousu à la main avec une attention absolue aux détails.</p>
     </div>
-
+ 
     <div class="service-card reveal">
       <span class="service-icon">🪡</span>
       <div class="service-name">Prêt-à-Porter Afro-Moderne</div>
       <p class="service-desc">Des collections capsule qui marient le wax africain, le bogolan et les bazins à des coupes contemporaines portables au quotidien. L'Afrique dans votre garde-robe.</p>
     </div>
-
+ 
     <div class="service-card reveal">
       <span class="service-icon">🎨</span>
       <div class="service-name">Design & Stylisme</div>
       <p class="service-desc">Conseil en image, relooking complet et création de looks pour événements spéciaux. Je vous accompagne pour exprimer votre personnalité à travers votre style vestimentaire.</p>
     </div>
-
+ 
     <div class="service-card reveal">
       <span class="service-icon">🎭</span>
       <div class="service-name">Costumes & Uniformes</div>
       <p class="service-desc">Conception de costumes pour spectacles, uniformes d'entreprise personnalisés et tenues de scène pour les artistes. Du projet à la réalisation finale.</p>
     </div>
-
+ 
     <div class="service-card reveal">
       <span class="service-icon">💍</span>
       <div class="service-name">Tenues de Mariée</div>
       <p class="service-desc">Robes de mariage traditionnelles et modernes, tenues de demoiselles d'honneur et coordinations vestimentaires pour toute la cérémonie. Le plus beau jour mérite la plus belle robe.</p>
     </div>
-
+ 
     <div class="service-card reveal">
       <span class="service-icon">📐</span>
       <div class="service-name">Retouches & Ajustements</div>
@@ -1108,7 +1730,7 @@
     </div>
   </div>
 </section>
-
+ 
 <!-- COLLECTION -->
 <section class="collection" id="collection">
   <div class="collection-header reveal">
@@ -1118,7 +1740,7 @@
     </div>
     <p class="collection-note">Chaque pièce raconte une histoire — la vôtre.</p>
   </div>
-
+ 
   <div class="collection-grid">
     <div class="coll-item coll-item-1 reveal">
       <div class="coll-item-inner">
@@ -1129,7 +1751,7 @@
         </div>
       </div>
     </div>
-
+ 
     <div class="coll-item coll-item-2 reveal">
       <div class="coll-item-inner">
         <span>◆</span>
@@ -1139,7 +1761,7 @@
         </div>
       </div>
     </div>
-
+ 
     <div class="coll-item coll-item-3 reveal">
       <div class="coll-item-inner">
         <span>★</span>
@@ -1149,7 +1771,7 @@
         </div>
       </div>
     </div>
-
+ 
     <div class="coll-item coll-item-4 reveal">
       <div class="coll-item-inner">
         <span>◉</span>
@@ -1159,7 +1781,7 @@
         </div>
       </div>
     </div>
-
+ 
     <div class="coll-item coll-item-5 reveal">
       <div class="coll-item-inner">
         <span>◈</span>
@@ -1171,33 +1793,33 @@
     </div>
   </div>
 </section>
-
+ 
 <!-- PROCESS -->
 <section class="process">
   <div class="process-header">
     <p class="section-label" style="justify-content:center">Comment ça marche</p>
     <h2 class="section-title" style="text-align:center">De <em>l'idée</em> à la création</h2>
   </div>
-
+ 
   <div class="process-steps">
     <div class="process-step reveal">
       <div class="step-number">01</div>
       <div class="step-title">Consultation</div>
       <p class="step-desc">Un premier rendez-vous pour discuter de votre vision, l'occasion, vos préférences de tissus et votre style personnel.</p>
     </div>
-
+ 
     <div class="process-step reveal">
       <div class="step-number">02</div>
       <div class="step-title">Conception</div>
       <p class="step-desc">Création des croquis et sélection des matières. Vous validez le design avant que nous passions à la coupe.</p>
     </div>
-
+ 
     <div class="process-step reveal">
       <div class="step-number">03</div>
       <div class="step-title">Réalisation</div>
       <p class="step-desc">Toute la magie de l'atelier opère. Coupe, assemblage et finitions à la main avec le plus grand soin.</p>
     </div>
-
+ 
     <div class="process-step reveal">
       <div class="step-number">04</div>
       <div class="step-title">Livraison</div>
@@ -1205,30 +1827,30 @@
     </div>
   </div>
 </section>
-
+ 
 <!-- CONTACT -->
 <section class="contact" id="contact">
   <div class="contact-info">
     <p class="section-label" style="color:var(--gold)">Contact</p>
     <h2>Donnons vie à votre <em>rêve</em></h2>
-    <p class="contact-tagline">Que ce soit pour une robe de mariée, une tenue de cérémonie ou une création unique, notre atelier est ouvert pour vous accueillir chaleureusement.</p>
-
+    <p class="contact-tagline">Que ce soit pour une robe de mariée, une tenue de cérémonie ou une création unique, mon atelier est ouvert pour vous accueillir.</p>
+ 
     <div class="contact-detail">
       <span class="contact-icon">📍</span>
       <div>
         <div class="contact-detail-label">Atelier</div>
-        <div class="contact-detail-value">N'Djamena, Tchad<br>Quartier Chagoua non loin de Don Bosco en allant vers la Francophonie</div>
+        <div class="contact-detail-value">N'Djamena, Tchad<br>Quartier disponible sur demande</div>
       </div>
     </div>
-
+ 
     <div class="contact-detail">
       <span class="contact-icon">📞</span>
       <div>
         <div class="contact-detail-label">Téléphone / WhatsApp</div>
-        <div class="contact-detail-value">+235 62 88 50 80</div>
+        <div class="contact-detail-value">+235 — Sur demande</div>
       </div>
     </div>
-
+ 
     <div class="contact-detail">
       <span class="contact-icon">🕐</span>
       <div>
@@ -1236,20 +1858,20 @@
         <div class="contact-detail-value">Lundi – Samedi : 8h00 – 18h00</div>
       </div>
     </div>
-
+ 
     <div class="contact-detail">
       <span class="contact-icon">✉️</span>
       <div>
         <div class="contact-detail-label">Email</div>
-        <div class="contact-detail-value">ladengderpenglorie@gmail.com</div>
+        <div class="contact-detail-value">contact@ladengderpeng.td</div>
       </div>
     </div>
   </div>
-
+ 
   <div class="contact-form">
     <div class="form-group">
       <label>Votre nom complet</label>
-      <input type="text" placeholder="Ex : Koura Gisèle..." />
+      <input type="text" placeholder="Ex : Fatima Idriss..." />
     </div>
     <div class="form-group">
       <label>Téléphone / WhatsApp</label>
@@ -1261,7 +1883,6 @@
         <option value="">— Choisir une prestation —</option>
         <option>Robe de Mariée</option>
         <option>Tenue de Cérémonie</option>
-        <option>Tenue de Soirée</option>
         <option>Haute Couture Sur Mesure</option>
         <option>Prêt-à-Porter Afro-Moderne</option>
         <option>Retouches & Ajustements</option>
@@ -1275,7 +1896,129 @@
     <button class="btn-submit" onclick="sendMessage()"><span>✦ ENVOYER MA DEMANDE</span></button>
   </div>
 </section>
-
+ 
+<!-- AVIS CLIENTS -->
+<section class="reviews" id="reviews">
+  <div class="reviews-header">
+    <p class="section-label" style="justify-content:center">Témoignages</p>
+    <h2 class="section-title" style="text-align:center">Ce que disent <em>nos clientes</em></h2>
+  </div>
+ 
+  <!-- Note globale -->
+  <div class="global-rating reveal">
+    <div class="global-score" id="globalScore">4.9</div>
+    <div class="global-stars" id="globalStars">
+      <span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span>
+    </div>
+    <div class="global-count" id="globalCount">Basé sur 3 avis</div>
+    <div class="rating-bars" id="ratingBars">
+      <div class="rating-bar-row">
+        <span class="rating-bar-label">5★</span>
+        <div class="rating-bar-track"><div class="rating-bar-fill" style="width:90%"></div></div>
+        <span class="rating-bar-count" id="bar5">2</span>
+      </div>
+      <div class="rating-bar-row">
+        <span class="rating-bar-label">4★</span>
+        <div class="rating-bar-track"><div class="rating-bar-fill" style="width:33%"></div></div>
+        <span class="rating-bar-count" id="bar4">1</span>
+      </div>
+      <div class="rating-bar-row">
+        <span class="rating-bar-label">3★</span>
+        <div class="rating-bar-track"><div class="rating-bar-fill" style="width:0%"></div></div>
+        <span class="rating-bar-count" id="bar3">0</span>
+      </div>
+      <div class="rating-bar-row">
+        <span class="rating-bar-label">2★</span>
+        <div class="rating-bar-track"><div class="rating-bar-fill" style="width:0%"></div></div>
+        <span class="rating-bar-count" id="bar2">0</span>
+      </div>
+      <div class="rating-bar-row">
+        <span class="rating-bar-label">1★</span>
+        <div class="rating-bar-track"><div class="rating-bar-fill" style="width:0%"></div></div>
+        <span class="rating-bar-count" id="bar1">0</span>
+      </div>
+    </div>
+  </div>
+ 
+  <!-- Cartes avis -->
+  <div class="reviews-grid" id="reviewsGrid">
+ 
+    <div class="review-card reveal">
+      <div class="review-badge">Vérifié ✓</div>
+      <div class="review-stars">
+        <span class="star filled">★</span><span class="star filled">★</span><span class="star filled">★</span><span class="star filled">★</span><span class="star filled">★</span>
+      </div>
+      <p class="review-text">« Ma robe de mariée était absolument magnifique. Lorie a su capturer exactement ce que j'imaginais, avec une attention aux détails que je n'avais jamais vue. Je me suis sentie une vraie reine ! »</p>
+      <div class="review-author">
+        <div class="review-avatar" style="background:var(--terracotta)">FA</div>
+        <div>
+          <div class="review-author-name">Fatima Ahmat</div>
+          <div class="review-author-date">Mars 2025 · Robe de mariée</div>
+        </div>
+      </div>
+    </div>
+ 
+    <div class="review-card reveal">
+      <div class="review-badge">Vérifié ✓</div>
+      <div class="review-stars">
+        <span class="star filled">★</span><span class="star filled">★</span><span class="star filled">★</span><span class="star filled">★</span><span class="star filled">★</span>
+      </div>
+      <p class="review-text">« J'ai commandé un ensemble wax pour un événement familial. Le résultat était somptueux, les finitions impeccables. Tout le monde voulait savoir qui était la créatrice. Merci Lorie ! »</p>
+      <div class="review-author">
+        <div class="review-avatar" style="background:var(--wax-blue)">MN</div>
+        <div>
+          <div class="review-author-name">Mariam Ndjidda</div>
+          <div class="review-author-date">Janvier 2025 · Ensemble Wax</div>
+        </div>
+      </div>
+    </div>
+ 
+    <div class="review-card reveal">
+      <div class="review-badge">Vérifié ✓</div>
+      <div class="review-stars">
+        <span class="star filled">★</span><span class="star filled">★</span><span class="star filled">★</span><span class="star filled">★</span><span class="star">★</span>
+      </div>
+      <p class="review-text">« Service professionnel, délais respectés et une créativité remarquable. La tenue de cérémonie qu'elle a réalisée pour moi était exactement dans mon style. Je recommande vivement l'atelier ENG Fashion. »</p>
+      <div class="review-author">
+        <div class="review-avatar" style="background:var(--wax-green)">HB</div>
+        <div>
+          <div class="review-author-name">Halimé Brahim</div>
+          <div class="review-author-date">Décembre 2024 · Tenue de cérémonie</div>
+        </div>
+      </div>
+    </div>
+ 
+  </div>
+ 
+  <!-- Formulaire laisser un avis -->
+  <div class="add-review reveal">
+    <h3>Laissez votre avis</h3>
+    <p>Votre expérience compte — partagez-la avec notre communauté</p>
+ 
+    <div class="star-picker" id="starPicker">
+      <span class="star-picker-label">Votre note :</span>
+      <span class="pick-star" data-val="1" onclick="setRating(1)">★</span>
+      <span class="pick-star" data-val="2" onclick="setRating(2)">★</span>
+      <span class="pick-star" data-val="3" onclick="setRating(3)">★</span>
+      <span class="pick-star" data-val="4" onclick="setRating(4)">★</span>
+      <span class="pick-star" data-val="5" onclick="setRating(5)">★</span>
+    </div>
+ 
+    <div class="review-form-grid">
+      <div class="review-form-group">
+        <input type="text" id="reviewName" placeholder="Votre prénom et nom" />
+      </div>
+      <div class="review-form-group">
+        <input type="text" id="reviewService" placeholder="Prestation reçue (ex: robe de mariée)" />
+      </div>
+    </div>
+    <div class="review-form-group">
+      <textarea id="reviewText" rows="3" placeholder="Partagez votre expérience avec l'atelier ENG Fashion..."></textarea>
+    </div>
+    <button class="btn-review" onclick="submitReview()">✦ PUBLIER MON AVIS</button>
+  </div>
+</section>
+ 
 <!-- FOOTER -->
 <footer>
   <div class="footer-logo">
@@ -1289,13 +2032,11 @@
     <div class="wax-dot" style="background:var(--wax-green)"></div>
     <div class="wax-dot" style="background:var(--deep-earth)"></div>
   </div>
-  <div class="footer-copy">© 2026 · Tous droits réservés
-   · Développé par Eric Kapet Ing. IT · Réseau · Design
-  </div>
+  <div class="footer-copy">© 2025 · Tous droits réservés</div>
 </footer>
-
+ 
 <div class="toast" id="toast">✦ Message envoyé ! Je vous réponds très bientôt.</div>
-
+ 
 <script>
   // Scroll reveal
   const reveals = document.querySelectorAll('.reveal');
@@ -1307,14 +2048,14 @@
     });
   }, { threshold: 0.1 });
   reveals.forEach(el => observer.observe(el));
-
+ 
   // Form submit
   function sendMessage() {
     const toast = document.getElementById('toast');
     toast.classList.add('show');
     setTimeout(() => toast.classList.remove('show'), 3500);
   }
-
+ 
   // Logo upload
   function uploadLogo(input) {
     if (input.files && input.files[0]) {
@@ -1329,7 +2070,7 @@
       reader.readAsDataURL(input.files[0]);
     }
   }
-
+ 
   // Photo upload
   function uploadPhoto(input) {
     if (input.files && input.files[0]) {
@@ -1344,8 +2085,113 @@
       reader.readAsDataURL(input.files[0]);
     }
   }
-
-  // Smooth nav
+ 
+  // ── REVIEWS ──
+  let currentRating = 0;
+  let reviews = [
+    { name: 'Fatima Ahmat', service: 'Robe de mariée', text: '« Ma robe de mariée était absolument magnifique. Lorie a su capturer exactement ce que j\'imaginais, avec une attention aux détails que je n\'avais jamais vue. »', rating: 5, date: 'Mars 2025', color: 'var(--terracotta)' },
+    { name: 'Mariam Ndjidda', service: 'Ensemble Wax', text: '« J\'ai commandé un ensemble wax pour un événement familial. Le résultat était somptueux, les finitions impeccables. »', rating: 5, date: 'Janvier 2025', color: 'var(--wax-blue)' },
+    { name: 'Halimé Brahim', service: 'Tenue de cérémonie', text: '« Service professionnel, délais respectés et une créativité remarquable. Je recommande vivement l\'atelier ENG Fashion. »', rating: 4, date: 'Décembre 2024', color: 'var(--wax-green)' }
+  ];
+ 
+  function setRating(val) {
+    currentRating = val;
+    document.querySelectorAll('.pick-star').forEach(s => {
+      s.classList.toggle('active', parseInt(s.dataset.val) <= val);
+    });
+  }
+ 
+  function getInitials(name) {
+    return name.split(' ').map(w => w[0]).join('').substring(0, 2).toUpperCase();
+  }
+ 
+  function getRandomColor() {
+    const colors = ['var(--terracotta)', 'var(--wax-blue)', 'var(--wax-green)', 'var(--sienna)', 'var(--gold)'];
+    return colors[Math.floor(Math.random() * colors.length)];
+  }
+ 
+  function updateStats() {
+    const total = reviews.length;
+    const avg = (reviews.reduce((s, r) => s + r.rating, 0) / total).toFixed(1);
+    document.getElementById('globalScore').textContent = avg;
+    document.getElementById('globalCount').textContent = `Basé sur ${total} avis`;
+ 
+    const now = new Date();
+    const months = ['Jan','Fév','Mar','Avr','Mai','Juin','Juil','Aoû','Sep','Oct','Nov','Déc'];
+ 
+    for (let i = 1; i <= 5; i++) {
+      const count = reviews.filter(r => r.rating === i).length;
+      const pct = total > 0 ? (count / total * 100) : 0;
+      document.getElementById('bar' + i).textContent = count;
+      const fill = document.querySelector(`.rating-bar-row:nth-child(${6 - i}) .rating-bar-fill`);
+      if (fill) fill.style.width = pct + '%';
+    }
+ 
+    const avgRounded = Math.round(parseFloat(avg));
+    document.getElementById('globalStars').innerHTML = [1,2,3,4,5].map(i =>
+      `<span class="star" style="color:${i <= avgRounded ? 'var(--gold)' : '#ddd'}">★</span>`
+    ).join('');
+  }
+ 
+  function renderReviews() {
+    const grid = document.getElementById('reviewsGrid');
+    grid.innerHTML = reviews.map(r => `
+      <div class="review-card reveal visible">
+        <div class="review-badge">Vérifié ✓</div>
+        <div class="review-stars">${[1,2,3,4,5].map(i => `<span class="star ${i <= r.rating ? 'filled' : ''}">★</span>`).join('')}</div>
+        <p class="review-text">${r.text}</p>
+        <div class="review-author">
+          <div class="review-avatar" style="background:${r.color}">${getInitials(r.name)}</div>
+          <div>
+            <div class="review-author-name">${r.name}</div>
+            <div class="review-author-date">${r.date} · ${r.service}</div>
+          </div>
+        </div>
+      </div>
+    `).join('');
+  }
+ 
+  function submitReview() {
+    const name = document.getElementById('reviewName').value.trim();
+    const service = document.getElementById('reviewService').value.trim();
+    const text = document.getElementById('reviewText').value.trim();
+ 
+    if (!name || !text || currentRating === 0) {
+      const toast = document.getElementById('toast');
+      toast.textContent = '⚠ Merci de remplir votre nom, votre note et votre avis.';
+      toast.style.background = 'var(--sienna)';
+      toast.classList.add('show');
+      setTimeout(() => toast.classList.remove('show'), 3000);
+      return;
+    }
+ 
+    const now = new Date();
+    const months = ['Janvier','Février','Mars','Avril','Mai','Juin','Juillet','Août','Septembre','Octobre','Novembre','Décembre'];
+    reviews.unshift({
+      name, service: service || 'Prestation ENG Fashion',
+      text: `« ${text} »`,
+      rating: currentRating,
+      date: `${months[now.getMonth()]} ${now.getFullYear()}`,
+      color: getRandomColor()
+    });
+ 
+    renderReviews();
+    updateStats();
+ 
+    document.getElementById('reviewName').value = '';
+    document.getElementById('reviewService').value = '';
+    document.getElementById('reviewText').value = '';
+    setRating(0);
+    currentRating = 0;
+ 
+    const toast = document.getElementById('toast');
+    toast.textContent = '✦ Merci pour votre avis ! Il est maintenant publié.';
+    toast.style.background = 'var(--terracotta)';
+    toast.classList.add('show');
+    setTimeout(() => toast.classList.remove('show'), 3500);
+  }
+ 
+  updateStats();
   document.querySelectorAll('a[href^="#"]').forEach(a => {
     a.addEventListener('click', e => {
       e.preventDefault();
