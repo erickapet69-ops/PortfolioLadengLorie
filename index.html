@@ -1871,16 +1871,16 @@
   <div class="contact-form">
     <div class="form-group">
       <label>Votre nom complet</label>
-      <input type="text" placeholder="Ex : Koura Gisèle..." />
+      <input type="text" id="clientName" placeholder="Ex : Koura Gisèle..." />
     </div>
     <div class="form-group">
       <label>Téléphone / WhatsApp</label>
-      <input type="tel" placeholder="+235 ..." />
+      <input type="tel" id="clientPhone" placeholder="+235 ..." />
     </div>
     <div class="form-group">
       <label>Type de prestation</label>
       <select>
-        <option value="">— Choisir une prestation —</option>
+        <select id="clientService">
         <option>Robe de Mariée</option>
         <option>Tenue de Cérémonie</option>
         <option>Tenue de Soirée</option>
@@ -1892,9 +1892,9 @@
     </div>
     <div class="form-group">
       <label>Décrivez votre projet</label>
-      <textarea rows="4" placeholder="Parlez-moi de votre occasion, vos couleurs préférées, votre inspiration..."></textarea>
+      <textarea id="clientProject" rows="4" placeholder="Parlez-moi de votre occasion, vos couleurs préférées, votre inspiration..."></textarea>
     </div>
-    <button class="btn-submit" onclick="sendMessage()"><span>✦ ENVOYER MA DEMANDE</span></button>
+    <button class="btn-submit" onclick="sendWhatsApp()"><span>📲 ENVOYER MA COMMANDE</span></button>
   </div>
 </section>
  
@@ -2016,7 +2016,7 @@
     <div class="review-form-group">
       <textarea id="reviewText" rows="3" placeholder="Partagez votre expérience avec l'atelier ENG Fashion..."></textarea>
     </div>
-    <button class="btn-review" onclick="submitReview()">✦ PUBLIER MON AVIS</button>
+    <button class="btn-review" onclick="submitReview()">✦ ENVOYER MON AVIS</button>
   </div>
 </section>
  
@@ -2051,11 +2051,21 @@
   reveals.forEach(el => observer.observe(el));
  
   // Form submit
-  function sendMessage() {
-    const toast = document.getElementById('toast');
-    toast.classList.add('show');
-    setTimeout(() => toast.classList.remove('show'), 3500);
-  }
+ function sendWhatsApp() {
+  const name    = document.getElementById('clientName').value.trim();
+  const phone   = document.getElementById('clientPhone').value.trim();
+  const service = document.getElementById('clientService').value;
+  const project = document.getElementById('clientProject').value.trim();
+
+  const msg = `✦ *Nouvelle commande — ENG Fashion*\n\n` +
+    `👤 *Nom :* ${name}\n` +
+    `📞 *Téléphone :* ${phone || 'Non renseigné'}\n` +
+    `👗 *Prestation :* ${service}\n` +
+    `📝 *Projet :* ${project}\n\n` +
+    `_Envoyé depuis le portfolio ENG Fashion_`;
+
+  window.open(`https://wa.me/23562885080?text=${encodeURIComponent(msg)}`, '_blank');
+}
  
   // Logo upload
   function uploadLogo(input) {
@@ -2153,18 +2163,62 @@
   }
  
   function submitReview() {
-    const name = document.getElementById('reviewName').value.trim();
-    const service = document.getElementById('reviewService').value.trim();
-    const text = document.getElementById('reviewText').value.trim();
- 
-    if (!name || !text || currentRating === 0) {
-      const toast = document.getElementById('toast');
-      toast.textContent = '⚠ Merci de remplir votre nom, votre note et votre avis.';
-      toast.style.background = 'var(--sienna)';
-      toast.classList.add('show');
-      setTimeout(() => toast.classList.remove('show'), 3000);
-      return;
-    }
+  const name    = document.getElementById('reviewName').value.trim();
+  const service = document.getElementById('reviewService').value.trim();
+  const text    = document.getElementById('reviewText').value.trim();
+
+  if (!name || !text || currentRating === 0) {
+    const toast = document.getElementById('toast');
+    toast.textContent = '⚠ Merci de remplir votre nom, votre note et votre avis.';
+    toast.style.background = 'var(--sienna)';
+    toast.classList.add('show');
+    setTimeout(() => toast.classList.remove('show'), 3000);
+    return;
+  }
+
+  const stars = '★'.repeat(currentRating) + '☆'.repeat(5 - currentRating);
+  const subject = `Nouvel avis client — ENG Fashion (${stars})`;
+  const body =
+    `Bonjour Lorie,\n\n` +
+    `Vous avez reçu un nouvel avis sur votre portfolio ENG Fashion.\n\n` +
+    `──────────────────────\n` +
+    `👤 Nom : ${name}\n` +
+    `👗 Prestation : ${service || 'Non précisée'}\n` +
+    `⭐ Note : ${stars} (${currentRating}/5)\n` +
+    `💬 Avis :\n${text}\n` +
+    `──────────────────────\n\n` +
+    `Envoyé depuis le portfolio ENG Fashion.`;
+
+  const mailto = `mailto:ladengderpenglorie@gmail.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+  window.open(mailto, '_blank');
+
+  const now = new Date();
+  const months = ['Janvier','Février','Mars','Avril','Mai','Juin','Juillet',
+                  'Août','Septembre','Octobre','Novembre','Décembre'];
+  reviews.unshift({
+    name,
+    service: service || 'Prestation ENG Fashion',
+    text: `« ${text} »`,
+    rating: currentRating,
+    date: `${months[now.getMonth()]} ${now.getFullYear()}`,
+    color: getRandomColor()
+  });
+
+  renderReviews();
+  updateStats();
+
+  document.getElementById('reviewName').value = '';
+  document.getElementById('reviewService').value = '';
+  document.getElementById('reviewText').value = '';
+  setRating(0);
+  currentRating = 0;
+
+  const toast = document.getElementById('toast');
+  toast.textContent = '✦ Votre avis a été envoyé par email à Lorie !';
+  toast.style.background = 'var(--terracotta)';
+  toast.classList.add('show');
+  setTimeout(() => toast.classList.remove('show'), 3500);
+}
  
     const now = new Date();
     const months = ['Janvier','Février','Mars','Avril','Mai','Juin','Juillet','Août','Septembre','Octobre','Novembre','Décembre'];
@@ -2190,7 +2244,6 @@
     toast.style.background = 'var(--terracotta)';
     toast.classList.add('show');
     setTimeout(() => toast.classList.remove('show'), 3500);
-  }
  
   updateStats();
   document.querySelectorAll('a[href^="#"]').forEach(a => {
